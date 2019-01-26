@@ -19,7 +19,7 @@ public class Parent : MonoBehaviour
         // feedback that parent is reacting to the noise.
         _target = noiseTransform;
     }
-
+    
     void Update()
     {
         if (_target == null)
