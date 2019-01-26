@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Microwave : AbstractTarget
 {
+    
     public override void React()
     {
-        throw new System.NotImplementedException();
+        if (ToddlerController.CurrentTool == null)
+        {
+            // do stuff
+        }
+        else
+        {
+            // explode.
+        }
     }
 }
