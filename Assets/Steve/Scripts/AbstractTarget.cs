@@ -31,8 +31,11 @@ public abstract class AbstractTarget : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
         {
-            waitingForConfirmation = true;
-            InteractionAttempt(ToddlerController.CurrentTool, this);
+            if (_itemsIWillReactWith.Contains(ToddlerController.CurrentTool))
+            {
+                waitingForConfirmation = true;
+                InteractionAttempt(ToddlerController.CurrentTool, this);
+            }
         }
     }
 
