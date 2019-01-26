@@ -1,92 +1,125 @@
-﻿using System;
+﻿
+using System;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+ 
+public class ToolAndTargetUI : MonoBehaviour {
+ 
+    public CanvasGroup carryingBar;
+    public CanvasGroup targetBar;
+    public CanvasGroup plusBar;
+ 
+    public TextMeshProUGUI carryingText;
+    public TextMeshProUGUI targetText;
+    public TextMeshProUGUI spaceText;
+ 
+ 
+    void Awake () {
+		// listen to tools and targets state changes
 
-public class ToolAndTargetUI : MonoBehaviour
-{
+		//
 
-	public CanvasGroup carryingBar;
-	public CanvasGroup targetBar;
-	public CanvasGroup plusBar;
-	
-	public TextMeshProUGUI carryingText;
-	public TextMeshProUGUI targetText;
+		ToddlerController.OnPickedUp += OnPickedUpObject;
+		ToddlerController.OnDropped += OnDroppedObject;
+		ToddlerController.PickupAttempt += OnAttemptPickup;
 
-    
-    void Awake()
-    {
-        // listen to tools and targets state changes
-        
-       	//
-    }
-    
-    void UpdateUI()
-    {
-        
-    }
-
-    [Button("test pickup")]
-    void TestPickup()
-    {
-
-		OnPickedUpObject (null, "Crayon");
-       
-    }
-
-	[Button("test drop")]
-    void TestDrop()
-    {
-
-		OnDroppedObject (null);
-       
-    }
-    
-    [Button("test approach")]
-    void TestApproach()
-    {
-
-		OnApproachObject (null, "Microwave");
-       
-    }
-
-
-
-	void OnPickedUpObject (AbstractTool tool, string name = null) {
-
-		if (tool == null) {
-			carryingText.text = name;
-		} else {
-			carryingText.text = tool.name;
-		}
-
-		carryingBar.alpha = 0;
-		carryingBar.DOFade (1f, 1f);
-
-	}
-	
-	void OnDroppedObject (AbstractTool tool) {
-
-		carryingBar.DOFade (0f, 1f);
-		plusBar.DOFade (0f, 1f);
-		targetBar.DOFade (0f, 1f);
-
-	}
-	
-	void OnApproachObject (AbstractTarget target, string name = null) {
+		AbstractTarget.InteractionAttempt += OnApproachObject;
 		
-		if (target == null) {
-			targetText.text = name;
-		} else {
-			targetText.text = target.name;
-		}
-
-		plusBar.alpha = 0;
-		plusBar.DOFade (1f, 1f);
 		
-		targetBar.alpha = 0;
-		targetBar.DOFade (1f, 1f);
-
-	}
+    }
+ 
+    void UpdateUI () {
+ 
+    }
+ 
+    [Button ("test pickup")]
+    void TestPickup () {
+ 
+        OnPickedUpObject (null);
+ 
+    }
+ 
+    [Button ("test drop")]
+    void TestDrop () {
+ 
+        OnDroppedObject (null);
+ 
+    }
+ 
+    [Button ("test approach")]
+    void TestApproach () {
+ 
+        OnApproachObject (null, null);
+ 
+    }
+     
+    [Button ("test attemptPickup")]
+    void TestAttemptPickup () {
+ 
+        OnAttemptPickup (null);
+ 
+    }
+ 
+ 
+    void OnAttemptPickup (AbstractTool tool) {
+ 
+         
+        if (tool == null) {
+            carryingText.text = "Spoon";
+        } else {
+            carryingText.text = tool.name;
+        }
+ 
+        carryingBar.alpha = 0;
+        carryingBar.DOFade (1f, 1f);
+         
+        spaceText.alpha = 0;
+        spaceText.DOFade (1f, 1f);
+        spaceText.text = "Space = Pick Up";
+ 
+ 
+    }
+ 
+    void OnPickedUpObject (AbstractTool tool) {
+ 
+        if (tool == null) {
+            carryingText.text = "Spanner";
+        } else {
+            carryingText.text = tool.name;
+        }
+ 
+        spaceText.DOFade (0f, 1f);
+ 
+    }
+     
+    void OnDroppedObject (AbstractTool tool) {
+ 
+        carryingBar.DOFade (0f, 1f);
+        plusBar.DOFade (0f, 1f);
+        targetBar.DOFade (0f, 1f);
+        spaceText.DOFade (0f, 1f);
+ 
+    }
+     
+    void OnApproachObject (AbstractTool tool, AbstractTarget target) {
+         
+        if (target == null) {
+            targetText.text = "Microwave";
+        } else {
+            targetText.text = target.name;
+        }
+ 
+        plusBar.alpha = 0;
+        plusBar.DOFade (1f, 1f);
+         
+        targetBar.alpha = 0;
+        targetBar.DOFade (1f, 1f);
+         
+        spaceText.alpha = 0;
+        spaceText.DOFade (1f, 1f);
+        spaceText.text = "Space = Interact";
+ 
+    }
 }
