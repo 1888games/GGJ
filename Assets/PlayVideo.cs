@@ -10,14 +10,14 @@ public class PlayVideo : MonoBehaviour
     void Start()
     {
 		var videoPlayer = GetComponent<VideoPlayer> ();
-        var audioSource = gameObject.AddComponent<AudioSource>();
+        //var audioSource = gameObject.AddComponent<AudioSource>();
 
 		videoPlayer.playOnAwake = false;
         videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
         videoPlayer.targetMaterialRenderer = GetComponent<Renderer>();
         videoPlayer.targetMaterialProperty = "_MainTex";
-        videoPlayer.audioOutputMode = UnityEngine.Video.VideoAudioOutputMode.AudioSource;
-        videoPlayer.SetTargetAudioSource(0, audioSource);
+        //videoPlayer.audioOutputMode = UnityEngine.Video.VideoAudioOutputMode.AudioSource;
+        //videoPlayer.SetTargetAudioSource(0, audioSource);
 
 		videoPlayer.Play ();
     }
