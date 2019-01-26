@@ -126,7 +126,7 @@ public class ToddlerController : MonoBehaviour
 
     public static AbstractTool CurrentTool;
 
-    public static Action<AbstractTool> PickupAttempt;
-    public static Action<AbstractTool> OnPickedUp;
-    public static Action<AbstractTool> OnDropped;
+    public static Action<AbstractTool> PickupAttempt= delegate {  };
+    public static Action<AbstractTool> OnPickedUp= delegate {  };
+    public static Action<AbstractTool> OnDropped= delegate {  };
 }

@@ -38,9 +38,9 @@ public abstract class AbstractTarget : MonoBehaviour
 
     public abstract bool TryReact();
 
-    public static Action<string> ReactionComplete;
+    public static Action<string> ReactionComplete= delegate {  };
 
-    public static Action<AbstractTool, AbstractTarget> ConfirmationReceived;
+    public static Action<AbstractTool, AbstractTarget> ConfirmationReceived = delegate {  };
 
-    public static Action<AbstractTool, AbstractTarget> InteractionAttempt;
+    public static Action<AbstractTool, AbstractTarget> InteractionAttempt= delegate {  };
 }
