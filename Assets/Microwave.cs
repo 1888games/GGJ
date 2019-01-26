@@ -9,6 +9,8 @@ public class Microwave : AbstractTarget
     {
         if (ToddlerController.CurrentTool == null)
         {
+            Fabric.EventManager.Instance.PostEvent("Simple", Fabric.EventAction.PlaySound, null, gameObject);
+
             // do stuff
         }
         else
