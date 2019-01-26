@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Drum : AbstractTarget
 {
+    AudioSource audio;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+
+        audio = this.gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
