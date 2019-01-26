@@ -42,7 +42,6 @@ public class Parent : MonoBehaviour
         if (other.GetComponent<Noise>() != null)
         {
             // we've reached the source of the noise.
-            print("a parent has reached the source of the noise.");
             _target = null;
         }
     }
