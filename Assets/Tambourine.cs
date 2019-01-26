@@ -1,8 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Tambourine : AbstractTool
+﻿
+public class Tambourine : AbstractTarget
 {
     
+    public override bool TryReact()
+    {
+        if (_itemsIWillReactWith.Contains(ToddlerController.CurrentTool))
+        {
+            print("play tambourine sound");
+            return true;
+        }
+        else
+        {
+            print("interaction fail.");
+            return false;
+        }
+    }
 }
