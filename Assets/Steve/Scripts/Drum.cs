@@ -13,17 +13,8 @@ public class Drum : AbstractTarget
 
         audio = this.gameObject.AddComponent<AudioSource>();
     }
-
-    // Update is called once per frame
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    public override bool TryReact()
+    public override void React()
     {
         audio.PlayOneShot(Resources.Load<AudioClip>("Steve/Boing"));
-
-        return true;
     }
 }

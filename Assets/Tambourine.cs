@@ -1,18 +1,8 @@
 ﻿
 public class Tambourine : AbstractTarget
 {
-    
-    public override bool TryReact()
+    public override void React()
     {
-        if (_itemsIWillReactWith.Contains(ToddlerController.CurrentTool))
-        {
-            print("play tambourine sound");
-            return true;
-        }
-        else
-        {
-            print("interaction fail.");
-            return false;
-        }
+        print("play tambourine sound.");
     }
 }

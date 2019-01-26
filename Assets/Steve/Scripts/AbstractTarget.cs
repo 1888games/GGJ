@@ -36,7 +36,19 @@ public abstract class AbstractTarget : MonoBehaviour
         }
     }
 
-    public abstract bool TryReact();
+    public virtual void TryReact()
+    {
+        if (_itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name))
+        {
+            React();
+        }
+        else
+        {
+            print("interaction fail. current tool: " + ToddlerController.CurrentTool.name );    
+        }
+    }
+
+    public abstract void React();
 
     public static Action<string> ReactionComplete= delegate {  };
 

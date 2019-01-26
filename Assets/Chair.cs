@@ -2,18 +2,8 @@
 
 public class Chair : AbstractTarget
 {
-    public override bool TryReact()
+    public override void React()
     {
-        if (_itemsIWillReactWith.Contains(ToddlerController.CurrentTool))
-        {
-            // react.
-            return true;
-        }
-        else
-        {
-            // no reaction.
-            return false;
-        }
-        
+        throw new System.NotImplementedException();
     }
 }

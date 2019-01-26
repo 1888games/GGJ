@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8099953992361290805}
   - component: {fileID: 8099953992361290804}
   - component: {fileID: 8099953992361290807}
-  - component: {fileID: 8099953992361290806}
   m_Layer: 0
   m_Name: Bell (5)
   m_TagString: Untagged
@@ -1442,20 +1441,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953992361290806
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953992361290800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953992670148247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,7 +1453,6 @@ GameObject:
   - component: {fileID: 8099953992670148248}
   - component: {fileID: 8099953992670148251}
   - component: {fileID: 8099953992670148250}
-  - component: {fileID: 8099953992670148245}
   m_Layer: 0
   m_Name: Bell
   m_TagString: Untagged
@@ -2898,20 +2882,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953992670148245
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953992670148247}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953992872564764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,7 +2894,6 @@ GameObject:
   - component: {fileID: 8099953992872565217}
   - component: {fileID: 8099953992872565216}
   - component: {fileID: 8099953992872565219}
-  - component: {fileID: 8099953992872565218}
   m_Layer: 0
   m_Name: Bell (1)
   m_TagString: Untagged
@@ -4354,20 +4323,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953992872565218
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953992872564764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953992939598846
 GameObject:
   m_ObjectHideFlags: 0
@@ -4380,7 +4335,6 @@ GameObject:
   - component: {fileID: 8099953992939598787}
   - component: {fileID: 8099953992939598786}
   - component: {fileID: 8099953992939598845}
-  - component: {fileID: 8099953992939598844}
   m_Layer: 0
   m_Name: Bell (6)
   m_TagString: Untagged
@@ -5810,20 +5764,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953992939598844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953992939598846}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953993073821757
 GameObject:
   m_ObjectHideFlags: 0
@@ -5836,7 +5776,6 @@ GameObject:
   - component: {fileID: 8099953993073821702}
   - component: {fileID: 8099953993073821697}
   - component: {fileID: 8099953993073821696}
-  - component: {fileID: 8099953993073821699}
   m_Layer: 0
   m_Name: Bell (3)
   m_TagString: Untagged
@@ -7266,20 +7205,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953993073821699
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953993073821757}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953993352556086
 GameObject:
   m_ObjectHideFlags: 0
@@ -7292,7 +7217,6 @@ GameObject:
   - component: {fileID: 8099953993352556091}
   - component: {fileID: 8099953993352556090}
   - component: {fileID: 8099953993352556085}
-  - component: {fileID: 8099953993352556084}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -8722,20 +8646,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953993352556084
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953993352556086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953993536945236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8748,7 +8658,6 @@ GameObject:
   - component: {fileID: 8099953993536945241}
   - component: {fileID: 8099953993536945240}
   - component: {fileID: 8099953993536945243}
-  - component: {fileID: 8099953993536945242}
   m_Layer: 0
   m_Name: Bell (2)
   m_TagString: Untagged
@@ -10178,20 +10087,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953993536945242
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953993536945236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8099953993556005089
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,7 +10112,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099953993556005089}
-  m_LocalRotation: {x: 0.014867284, y: 0.21836856, z: -0.0033272312, w: 0.97574747}
+  m_LocalRotation: {x: 0.014868359, y: 0.21836482, z: -0.0033274223, w: 0.9757483}
   m_LocalPosition: {x: -5.173, y: 0.072, z: 2.061}
   m_LocalScale: {x: 0.76775, y: 1, z: 0.74219}
   m_Children:
@@ -10272,7 +10167,6 @@ GameObject:
   - component: {fileID: 8099953994017909568}
   - component: {fileID: 8099953994017909571}
   - component: {fileID: 8099953994017909570}
-  - component: {fileID: 8099953994017909629}
   m_Layer: 0
   m_Name: Bell (4)
   m_TagString: Untagged
@@ -11702,17 +11596,3 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8099953994017909629
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099953994017909631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
