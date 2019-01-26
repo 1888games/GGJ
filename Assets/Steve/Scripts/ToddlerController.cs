@@ -8,6 +8,8 @@ public class ToddlerController : MonoBehaviour
     private float walkRate = 1.0f;
 
     private CapsuleCollider capsuleCollider;
+    private Rigidbody rigidbody;
+    private FixedJoint holdJoint;
 
     private float radius;
     private float height;
@@ -15,6 +17,7 @@ public class ToddlerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
 
         radius = capsuleCollider.radius;
@@ -36,23 +39,25 @@ public class ToddlerController : MonoBehaviour
         }
         else
         {
-            if (Input.GetAxisRaw("Horizontal") < 0)
-            {
-                Walk(Direction.West);
-            }
-            else if (Input.GetAxisRaw("Horizontal") > 0)
-            {
-                Walk(Direction.East);
-            }
+            //if (Input.GetAxisRaw("Horizontal") < 0)
+            //{
+            //    Walk(Direction.West);
+            //}
+            //else if (Input.GetAxisRaw("Horizontal") > 0)
+            //{
+            //    Walk(Direction.East);
+            //}
 
-            if (Input.GetAxisRaw("Vertical") > 0)
-            {
-                Walk(Direction.North);
-            }
-            else if (Input.GetAxisRaw("Vertical") < 0)
-            {
-                Walk(Direction.South);
-            }
+            //if (Input.GetAxisRaw("Vertical") > 0)
+            //{
+            //    Walk(Direction.North);
+            //}
+            //else if (Input.GetAxisRaw("Vertical") < 0)
+            //{
+            //    Walk(Direction.South);
+            //}
+
+            TurnAndRotate();
         }
     }
 
@@ -179,8 +184,10 @@ public class ToddlerController : MonoBehaviour
         if (currentTool != null)
         {
             currentTool.transform.SetParent(null);
-            //currentTool.GetComponent<Rigidbody>().isKinematic = false;
+            currentTool.GetComponent<Rigidbody>().useGravity = true;
             currentTool = null;
+
+            Destroy(holdJoint);
         }
     }
 
@@ -189,7 +196,11 @@ public class ToddlerController : MonoBehaviour
         tool.transform.SetParent(this.transform);
         Vector3 toolSize = tool.GetComponent<BoxCollider>().size;
         tool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
-        //tool.GetComponent<Rigidbody>().isKinematic = true;
+        tool.GetComponent<Rigidbody>().useGravity = false;
+
+        holdJoint = tool.AddComponent<FixedJoint>();
+        holdJoint.breakForce = 10000f; // Play with this value
+        holdJoint.connectedBody = this.rigidbody;
 
         currentTool = tool;
     }
