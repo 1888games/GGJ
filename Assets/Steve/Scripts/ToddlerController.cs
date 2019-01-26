@@ -88,7 +88,10 @@ public class ToddlerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Tool") && availableTool == other.gameObject)
+        {
+            OnWalkaway(availableTool.GetComponent<AbstractTool>());
             availableTool = null;
+        }
     }
 
     private void DropTool()
@@ -127,6 +130,7 @@ public class ToddlerController : MonoBehaviour
     public static AbstractTool CurrentTool;
 
     public static Action<AbstractTool> PickupAttempt= delegate {  };
+    public static Action<AbstractTool> OnWalkaway = delegate { };
     public static Action<AbstractTool> OnPickedUp= delegate {  };
     public static Action<AbstractTool> OnDropped= delegate {  };
 }

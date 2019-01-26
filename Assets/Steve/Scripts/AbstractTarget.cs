@@ -31,21 +31,41 @@ public abstract class AbstractTarget : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
         {
-            waitingForConfirmation = true;
-            InteractionAttempt(ToddlerController.CurrentTool, this);
+            if (IsReactableTool())
+            {
+                waitingForConfirmation = true;
+                InteractionAttempt(ToddlerController.CurrentTool, this);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
+        {
+            if (IsReactableTool())
+            {
+                waitingForConfirmation = false;
+                OnWalkaway(ToddlerController.CurrentTool, this);
+            }
         }
     }
 
     public virtual void TryReact()
     {
-        if (_itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name))
+        if (IsReactableTool())
         {
             React();
         }
         else
         {
-            print("interaction fail. current tool: " + ToddlerController.CurrentTool.name );    
+            print("interaction fail. current tool: " + ToddlerController.CurrentTool.name);
         }
+    }
+
+    private AbstractTool IsReactableTool()
+    {
+        return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name);
     }
 
     public abstract void React();
@@ -55,4 +75,6 @@ public abstract class AbstractTarget : MonoBehaviour
     public static Action<AbstractTool, AbstractTarget> ConfirmationReceived = delegate {  };
 
     public static Action<AbstractTool, AbstractTarget> InteractionAttempt= delegate {  };
+
+    public static Action<AbstractTool, AbstractTarget> OnWalkaway = delegate { };
 }

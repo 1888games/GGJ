@@ -24,8 +24,11 @@ public class ToolAndTargetUI : MonoBehaviour {
 		ToddlerController.OnPickedUp += OnPickedUpObject;
 		ToddlerController.OnDropped += OnDroppedObject;
 		ToddlerController.PickupAttempt += OnAttemptPickup;
+		ToddlerController.OnWalkaway += OnCancelPickup;
+		
 
 		AbstractTarget.InteractionAttempt += OnApproachObject;
+		AbstractTarget.OnWalkaway += OnCancelInteract;
 		
 		
     }
@@ -81,6 +84,23 @@ public class ToolAndTargetUI : MonoBehaviour {
  
  
     }
+
+
+	void OnCancelPickup (AbstractTool tool) {
+
+		spaceText.DOFade (0f, 1f);
+		carryingBar.DOFade (0f, 1f);
+
+	}
+
+	void OnCancelInteract (AbstractTool tool, AbstractTarget target) {
+			
+		spaceText.DOFade (0f, 1f);
+		carryingBar.DOFade (0f, 1f);
+		targetBar.DOFade (0f, 1f);
+        spaceText.DOFade (0f, 1f);
+		
+	}
  
     void OnPickedUpObject (AbstractTool tool) {
  
