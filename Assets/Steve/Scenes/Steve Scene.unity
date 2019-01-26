@@ -590,7 +590,7 @@ PrefabInstance:
     - target: {fileID: 4003675242326563229, guid: 1ea2b4c4c96bd4ebaaba3eaa5704a1c3,
         type: 3}
       propertyPath: m_Name
-      value: Target
+      value: Drum
       objectReference: {fileID: 0}
     - target: {fileID: 4003675242326563203, guid: 1ea2b4c4c96bd4ebaaba3eaa5704a1c3,
         type: 3}
@@ -647,6 +647,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4003675242326563228, guid: 1ea2b4c4c96bd4ebaaba3eaa5704a1c3,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea2b4c4c96bd4ebaaba3eaa5704a1c3, type: 3}
 --- !u!1001 &8689386666634080837
@@ -659,7 +664,7 @@ PrefabInstance:
     - target: {fileID: 8689386666746980099, guid: 7ed1acbc68775423bb82d9baf7e3754c,
         type: 3}
       propertyPath: m_Name
-      value: Tool
+      value: Fork
       objectReference: {fileID: 0}
     - target: {fileID: 8689386666746980110, guid: 7ed1acbc68775423bb82d9baf7e3754c,
         type: 3}
@@ -721,5 +726,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c5e9359c98de0498e99431c59370573b, type: 2}
+    - target: {fileID: 2497564440236774541, guid: 7ed1acbc68775423bb82d9baf7e3754c,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec730fb520cc34fd09284aaeda543df5, type: 3}
+    - target: {fileID: 7807165208219650883, guid: 7ed1acbc68775423bb82d9baf7e3754c,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ed1acbc68775423bb82d9baf7e3754c, type: 3}
