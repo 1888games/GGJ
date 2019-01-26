@@ -32,7 +32,7 @@ public class ToddlerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (HasTool)
+            if (CurrentTool != null)
                 DropTool();
             else
                 PickupTool();
@@ -156,8 +156,6 @@ public class ToddlerController : MonoBehaviour
         }
     }
 
-    private GameObject currentTool;
-
     public void PickupTool()
     {
         if (availableTools.Count == 1)
@@ -174,18 +172,13 @@ public class ToddlerController : MonoBehaviour
         }
     }
 
-    public bool HasTool
-    {
-        get { return currentTool != null; }
-    }
-
     public void DropTool()
     {
-        if (currentTool != null)
+        if (CurrentTool != null)
         {
-            currentTool.transform.SetParent(null);
-            currentTool.GetComponent<Rigidbody>().useGravity = true;
-            currentTool = null;
+            CurrentTool.transform.SetParent(null);
+            CurrentTool.GetComponent<Rigidbody>().useGravity = true;
+            CurrentTool = null;
 
             Destroy(holdJoint);
         }
@@ -202,6 +195,8 @@ public class ToddlerController : MonoBehaviour
         holdJoint.breakForce = 10000f; // Play with this value
         holdJoint.connectedBody = this.rigidbody;
 
-        currentTool = tool;
+        CurrentTool = tool.GetComponent<AbstractTool>();
     }
+
+    public static AbstractTool CurrentTool;
 }
