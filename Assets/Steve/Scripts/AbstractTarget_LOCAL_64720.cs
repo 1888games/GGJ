@@ -5,8 +5,6 @@ using UnityEngine;
 
 public abstract class AbstractTarget : MonoBehaviour
 {
-    [SerializeField] protected List<AbstractTool> _itemsIWillReactWith;
-
     protected bool waitingForConfirmation;
 
     // Start is called before the first frame update

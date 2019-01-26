@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public class ToddlerController : MonoBehaviour
 
     private float radius;
     private float height;
+
+    private bool waitingForConfirmation;
+
+    private GameObject availableTool;
 
     // Start is called before the first frame update
     void Start()
@@ -34,97 +39,30 @@ public class ToddlerController : MonoBehaviour
         {
             if (CurrentTool != null)
                 DropTool();
-            else
-                PickupTool();
+        }
+        else if (waitingForConfirmation && Input.GetKeyDown(KeyCode.Space))
+        {
+            waitingForConfirmation = false;
+
+            DoPickup();
         }
         else
         {
-            //if (Input.GetAxisRaw("Horizontal") < 0)
-            //{
-            //    Walk(Direction.West);
-            //}
-            //else if (Input.GetAxisRaw("Horizontal") > 0)
-            //{
-            //    Walk(Direction.East);
-            //}
-
-            //if (Input.GetAxisRaw("Vertical") > 0)
-            //{
-            //    Walk(Direction.North);
-            //}
-            //else if (Input.GetAxisRaw("Vertical") < 0)
-            //{
-            //    Walk(Direction.South);
-            //}
-
             TurnAndRotate();
         }
     }
 
     private void TurnAndRotate()
     {
-        //float xMove = Mathf.Clamp(transform.position.x + Input.GetAxis("Horizontal") * GetWalkRate() * Time.deltaTime, limitsX.x, limitsX.y);
-        //float yMove = Mathf.Clamp(transform.position.z + Input.GetAxis("Vertical") * GetWalkRate() * Time.deltaTime, limitsY.x, limitsY.y);
-
         float xMove = transform.position.x + Input.GetAxis("Horizontal") * GetWalkRate() * Time.fixedDeltaTime;
         float yMove = transform.position.z + Input.GetAxis("Vertical") * GetWalkRate() * Time.fixedDeltaTime;
 
         // rotate to face direction of travel
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-
             transform.eulerAngles = new Vector3(0f, Mathf.Atan2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Mathf.Rad2Deg, 0f);
 
             transform.position = (new Vector3(xMove, transform.position.y, yMove));
-
-        }
-    }
-
-    /// <summary>
-    /// Moves the toddler in the specified direction.
-    /// </summary>
-    /// <param name="direction">Direction.</param>
-    private void Walk(Vector3 direction)
-    {
-        transform.Translate(direction * GetWalkRate() * Time.fixedDeltaTime);
-
-        Vector3 newQ = new Vector3(0, 0, 0);
-
-        if (direction == Direction.East)
-        {
-            newQ = new Vector3(0, 0, 0);
-            //Debug.Log("East: " + newQ);
-        }
-        else if (direction == Direction.West)
-        {
-            newQ = new Vector3(0, 180f, 0);
-            //Debug.Log("West: " + newQ);
-        }
-        else if (direction == Direction.North)
-        {
-            newQ = new Vector3(0, 90f, 0);
-            //Debug.Log("North: " + newQ);
-        }
-        else if (direction == Direction.South)
-        {
-            newQ = new Vector3(0, -90f, 0);
-            //Debug.Log("South: " + newQ);
-        }
-
-        //Debug.DrawRay(transform.position, newRotation, Color.red);
-
-        //if (newRotation != Vector3.zero)
-        //{
-        //    Debug.Log("Direction: " + newRotation);
-        //    //transform.rotation.SetLookRotation(newRotation);// = Quaternion.LookRotation(newRotation);
-        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
-        //    //Quaternion.RotateTowards(transform.rotation.)
-        //}
-
-        if (direction != Direction.Stationary)
-        {
-            //transform.eulerAngles = newQ;
-            //transform.rotation = Quaternion.Euler(newQ);
         }
     }
 
@@ -137,45 +75,28 @@ public class ToddlerController : MonoBehaviour
         return this.walkRate;
     }
 
-    List<GameObject> availableTools = new List<GameObject>();
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Tool"))
+        if (!waitingForConfirmation && other.gameObject.CompareTag("Tool"))
         {
-            availableTools.Add(collision.gameObject);
+            waitingForConfirmation = true;
+            availableTool = other.gameObject;
+            PickupAttempt(availableTool.GetComponent<AbstractTool>());
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        GameObject collidedObject = collision.gameObject;
-        if (collidedObject.CompareTag("Tool") && availableTools.Contains(collidedObject))
-        {
-            availableTools.Remove(collidedObject);
-        }
+        if (other.gameObject.CompareTag("Tool") && availableTool == other.gameObject)
+            availableTool = null;
     }
 
-    public void PickupTool()
-    {
-        if (availableTools.Count == 1)
-        {
-            DoPickup(availableTools[0]);
-        }
-        else if (availableTools.Count > 1)
-        {
-            // prompt player to select a tool
-        }
-        else // no tools available
-        {
-            // do nothing
-        }
-    }
-
-    public void DropTool()
+    private void DropTool()
     {
         if (CurrentTool != null)
         {
+            OnDropped(CurrentTool);
+
             CurrentTool.transform.SetParent(null);
             CurrentTool.GetComponent<Rigidbody>().useGravity = true;
             CurrentTool = null;
@@ -184,19 +105,28 @@ public class ToddlerController : MonoBehaviour
         }
     }
 
-    private void DoPickup(GameObject tool)
+    private void DoPickup()
     {
-        tool.transform.SetParent(this.transform);
-        Vector3 toolSize = tool.GetComponent<BoxCollider>().size;
-        tool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
-        tool.GetComponent<Rigidbody>().useGravity = false;
+        if (availableTool != null)
+        {
+            availableTool.transform.SetParent(this.transform);
+            Vector3 toolSize = tool.GetComponent<BoxCollider>().size;
+            availableTool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
+            availableTool.GetComponent<Rigidbody>().useGravity = false;
 
-        holdJoint = tool.AddComponent<FixedJoint>();
-        holdJoint.breakForce = 10000f; // Play with this value
-        holdJoint.connectedBody = this.rigidbody;
+            holdJoint = availableTool.AddComponent<FixedJoint>();
+            holdJoint.breakForce = 10000f; // Play with this value
+            holdJoint.connectedBody = this.rigidbody;
 
-        CurrentTool = tool.GetComponent<AbstractTool>();
+            CurrentTool = availableTool.GetComponent<AbstractTool>();
+
+            OnPickedUp(CurrentTool);
+        }
     }
 
     public static AbstractTool CurrentTool;
+
+    public static Action<AbstractTool> PickupAttempt;
+    public static Action<AbstractTool> OnPickedUp;
+    public static Action<AbstractTool> OnDropped;
 }

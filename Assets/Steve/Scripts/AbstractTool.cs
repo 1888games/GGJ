@@ -5,10 +5,6 @@ using UnityEngine;
 
 public abstract class AbstractTool : MonoBehaviour
 {
-    [SerializeField]
-    protected AudioClip audioClip;
-
-    protected AudioSource audio;
     protected MeshRenderer meshRenderer;
 
     protected bool audioPlaying;
@@ -16,9 +12,6 @@ public abstract class AbstractTool : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        audio = GetComponent<AudioSource>();
-        if (audioClip != null)
-            audio.clip = audioClip;
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
@@ -27,15 +20,6 @@ public abstract class AbstractTool : MonoBehaviour
     {
         if (IsHeld)
             indicateProximity(false);
-
-        if (IsHeld && audioClip != null && !audioPlaying)
-        {
-            playAudio(true);
-        }
-        else if (!IsHeld && audioPlaying)
-        {
-            playAudio(false);
-        }
     }
 
     /// <summary>
@@ -47,17 +31,17 @@ public abstract class AbstractTool : MonoBehaviour
         get { return transform.parent != null && transform.parent.CompareTag("Player"); }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player") && !IsHeld)
+        if (other.gameObject.CompareTag("Player") && !IsHeld)
         {
             indicateProximity(true);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player") && !IsHeld)
+        if (other.gameObject.CompareTag("Player") && !IsHeld)
         {
             indicateProximity(false);
         }
@@ -72,20 +56,6 @@ public abstract class AbstractTool : MonoBehaviour
         else
         {
             meshRenderer.material.color = Color.white;
-        }
-    }
-
-    protected virtual void playAudio(bool enable = true)
-    {
-        if (enable)
-        {
-            audioPlaying = true;
-            audio.Play();
-        }
-        else
-        {
-            audioPlaying = false;
-            audio.Stop();
         }
     }
 }
