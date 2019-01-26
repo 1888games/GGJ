@@ -12,6 +12,7 @@ public class Microwave : AbstractTarget
             Fabric.EventManager.Instance.PostEvent("Simple", Fabric.EventAction.PlaySound, null, gameObject);
 
             // do stuff
+            
         }
         else
         {

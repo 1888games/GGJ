@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ToddlerController : MonoBehaviour
 {
     [SerializeField]
     private float walkRate = 1.0f;
-
+    [SerializeField] Transform _hand;
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigidbody;
     private FixedJoint holdJoint;
-
+    Animator _anim;
     private float radius;
     private float height;
 
@@ -22,6 +20,7 @@ public class ToddlerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _anim = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
 
@@ -34,6 +33,7 @@ public class ToddlerController : MonoBehaviour
         if (!Input.anyKey)
         {
             // do nothing
+            _anim.SetBool("isWalking", false);
         }
         else if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -49,6 +49,7 @@ public class ToddlerController : MonoBehaviour
         else
         {
             TurnAndRotate();
+            _anim.SetBool("isWalking", true);
         }
     }
 
@@ -64,6 +65,7 @@ public class ToddlerController : MonoBehaviour
 
             transform.position = (new Vector3(xMove, transform.position.y, yMove));
         }
+        
     }
 
     /// <summary>
@@ -108,11 +110,12 @@ public class ToddlerController : MonoBehaviour
         }
     }
 
+    
     private void DoPickup()
     {
         if (availableTool != null)
         {
-            availableTool.transform.SetParent(this.transform);
+            availableTool.transform.SetParent(_hand == null ? transform : _hand);
             Vector3 toolSize = availableTool.GetComponent<BoxCollider>().size;
             availableTool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
             availableTool.GetComponent<Rigidbody>().useGravity = false;

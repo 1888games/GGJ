@@ -7,17 +7,19 @@ public class Parent : MonoBehaviour
     Transform _target;
     [SerializeField] float _updatePathThrottleSec;
     float _lastTimePathUpdated;
-
+    Animator _anim;
     void Awake()
     {
         Noise.OnEmitted += ReactToNoise;
         _agent = GetComponent<NavMeshAgent>();
+        _anim = GetComponent<Animator>();
     }
 
     void ReactToNoise(Transform noiseTransform)
     {
         // feedback that parent is reacting to the noise.
         _target = noiseTransform;
+        _anim.SetBool("isWalking", true);
     }
     
     void Update()
@@ -33,6 +35,7 @@ public class Parent : MonoBehaviour
             {
                 _agent.SetDestination(_target.position);
                 _agent.isStopped = false;
+                
             }
         }
     }
@@ -43,6 +46,7 @@ public class Parent : MonoBehaviour
         {
             // we've reached the source of the noise.
             _target = null;
+            _anim.SetBool("isWalking", false);
         }
     }
 }
