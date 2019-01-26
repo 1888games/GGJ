@@ -5,13 +5,14 @@ using UnityEngine;
 
 public abstract class AbstractTarget : MonoBehaviour
 {
-    [SerializeField] protected List<AbstractTool> _itemsIWillReactWith;
+    protected AudioSource audio;
 
     protected bool waitingForConfirmation;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,9 +28,17 @@ public abstract class AbstractTarget : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.Equals("Fork"))
+        {
+            audio.PlayOneShot(Resources.Load<AudioClip>("Steve/Boing"));
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
+        if (other.gameObject.CompareTag("Player"))
         {
             waitingForConfirmation = true;
             InteractionAttempt(ToddlerController.CurrentTool, this);

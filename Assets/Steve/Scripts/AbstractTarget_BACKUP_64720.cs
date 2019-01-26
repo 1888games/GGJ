@@ -5,9 +5,14 @@ using UnityEngine;
 
 public abstract class AbstractTarget : MonoBehaviour
 {
-    [SerializeField] protected List<AbstractTool> _itemsIWillReactWith;
+<<<<<<< HEAD
+    protected bool waitingForConfirmation;
+=======
+    protected AudioSource audio;
+    [SerializeField] protected List<AbstractTool> _itemsIWillReactWith; 
 
     protected bool waitingForConfirmation;
+>>>>>>> 1ba445088ead54f4bfd23afd2c2680fe48bfb71e
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -29,8 +34,13 @@ public abstract class AbstractTarget : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+<<<<<<< HEAD
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
         {
+=======
+        if (other.gameObject.CompareTag("Player"))
+        {
+>>>>>>> 1ba445088ead54f4bfd23afd2c2680fe48bfb71e
             waitingForConfirmation = true;
             InteractionAttempt(ToddlerController.CurrentTool, this);
         }
