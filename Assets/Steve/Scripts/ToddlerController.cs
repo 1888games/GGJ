@@ -110,7 +110,7 @@ public class ToddlerController : MonoBehaviour
         if (availableTool != null)
         {
             availableTool.transform.SetParent(this.transform);
-            Vector3 toolSize = tool.GetComponent<BoxCollider>().size;
+            Vector3 toolSize = availableTool.GetComponent<BoxCollider>().size;
             availableTool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
             availableTool.GetComponent<Rigidbody>().useGravity = false;
 
