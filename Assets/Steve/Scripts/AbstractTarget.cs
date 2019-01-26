@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class AbstractTarget : MonoBehaviour
 {
     protected AudioSource audio;
+    [SerializeField] protected List<AbstractTool> _itemsIWillReactWith; 
 
     protected bool waitingForConfirmation;
 
