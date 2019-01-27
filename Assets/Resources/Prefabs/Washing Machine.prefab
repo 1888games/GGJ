@@ -288,9 +288,10 @@ GameObject:
   - component: {fileID: 3802880756153574421}
   - component: {fileID: 3802880756153574420}
   - component: {fileID: 3802880756153574423}
+  - component: {fileID: 2437290790231899402}
   m_Layer: 0
   m_Name: Washing Machine
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,6 +373,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2437290790231899402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802880756153574425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6496b31234e654e05b1a2aa486d7bcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemsIWillReactWith:
+  - {fileID: 2358105958160230250, guid: 2cc695186065648019a7646c7f6a64ff, type: 3}
+  - {fileID: 1831814543119165241, guid: 97f6bdb5cb055490f8102d7b777f81c7, type: 3}
+  - {fileID: 8947136784388640193, guid: 5f32238803780489fb527a0b24bf9976, type: 3}
+  - {fileID: 1977949206637233376, guid: 5ab621c89a98640efa33660114d3431e, type: 3}
+  - {fileID: 1629535981945662858, guid: 376a605a1e31b44a5a469af2457d33e9, type: 3}
+  - {fileID: 1539534529122387359, guid: 4ca0a4606edd147adad1cbb1dfd96f3e, type: 3}
+  - {fileID: 7554596411044363259, guid: 5f5261eb565374e46b7b9093601f4803, type: 3}
+  - {fileID: 2996752684781694058, guid: 6ebbdd0709a914e988141b258d4efb0f, type: 3}
+  - {fileID: 4894790315497831443, guid: 9c435863922dc4fe7a28c006dc31873d, type: 3}
+  - {fileID: 8603747749541959512, guid: 5bab2a0f911844c239104a2eba83d9e5, type: 3}
+  - {fileID: 1973275025811855786, guid: 030b254e553164a88b57624d50c60abf, type: 3}
+  - {fileID: 1900967760037275159, guid: d4f39be947d48418485b01d2e7d02ca4, type: 3}
+  _noisePrefab: {fileID: 0}
 --- !u!1 &3802880756596233929
 GameObject:
   m_ObjectHideFlags: 0
