@@ -102,6 +102,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     private void OnTriggerEnter(Collider other)
     {
+        print("toddler trigger enter. is waiting: " + waitingForConfirmation);
         if (!waitingForConfirmation && other.gameObject.CompareTag("Tool"))
         {
             waitingForConfirmation = true;
@@ -187,6 +188,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         {
             OnWalkaway(availableTool.GetComponent<AbstractTool>());
             availableTool = null;
+            waitingForConfirmation = false;
         }
     }
 
