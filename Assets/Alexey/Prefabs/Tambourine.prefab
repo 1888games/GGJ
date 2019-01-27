@@ -10139,8 +10139,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5413461, y: 0.29859495, z: 1.5519677}
-  m_Center: {x: -0.080212355, y: 0.05953771, z: 0.09020811}
+  m_Size: {x: 1.9018155, y: 1.0713856, z: 2.0861013}
+  m_Center: {x: 0.10002237, y: 0.4459314, z: -0.17685896}
 --- !u!114 &8099953993556005092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10154,9 +10154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemsIWillReactWith:
-  - {fileID: 1973275025811855786, guid: 030b254e553164a88b57624d50c60abf, type: 3}
-  - {fileID: 842759663850723530, guid: 0874376be1c3c4cfb8f9433ab34dc97f, type: 3}
-  _noisePrefab: {fileID: 0}
+  - {fileID: 1900967760037275159, guid: d4f39be947d48418485b01d2e7d02ca4, type: 3}
 --- !u!54 &1381114131
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -15,6 +15,13 @@ public abstract class AbstractTarget : MonoBehaviour
     {
     }
 
+    [Button("clear list")]
+    void ClearList()
+    {
+        _itemsIWillReactWith = new List<AbstractTool>();
+        _itemsIWillReactWith.Clear();
+    }
+
     // Update is called once per frame
     public virtual void Update()
     {

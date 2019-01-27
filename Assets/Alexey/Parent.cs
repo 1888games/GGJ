@@ -21,6 +21,8 @@ public class Parent : MonoBehaviour
         _target = noiseTransform;
         _anim.SetBool("isWalking", true);
     }
+
+    [SerializeField] float _reactToToddlerDistance;
     
     void Update()
     {
@@ -36,7 +38,15 @@ public class Parent : MonoBehaviour
             {
                 _agent.SetDestination(_target.position);
                 _agent.isStopped = false;
-                
+            }
+
+            if (Vector3.Distance(transform.position, _target.position) < _reactToToddlerDistance)
+            {
+                // catch the toddler
+                ToddlerController.Instance.OnCaught();
+                _anim.SetBool("isWalking", false);
+                _agent.isStopped = true;
+                _target = null;
             }
         }
     }

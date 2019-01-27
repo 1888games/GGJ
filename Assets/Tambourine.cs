@@ -1,12 +1,20 @@
-﻿
+﻿using System.Collections;
 using UnityEngine;
 
 public class Tambourine : AbstractTarget
 {
-    [SerializeField] GameObject _noisePrefab;
     public override void React()
     {
-        Fabric.EventManager.Instance.PostEvent("Toy_Tambourine", Fabric.EventAction.PlaySound, null, gameObject);        
-        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z) ,Quaternion.identity);
+        StartCoroutine(playtambourine());
+        ToddlerController.Instance.OnMadeNoise();
+    }
+
+    IEnumerator playtambourine()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Fabric.EventManager.Instance.PostEvent("Toy_Tambourine", Fabric.EventAction.PlaySound, null, gameObject);
+            yield return new WaitForSeconds(1f);
+        }
     }
 }

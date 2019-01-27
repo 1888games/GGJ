@@ -14,6 +14,8 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     [SerializeField] CanvasGroup _countdown;
     [SerializeField] TextMeshProUGUI _countdownText;
     [SerializeField] Transform _hand;
+    [SerializeField] GameObject _chaseAvoided;
+        [SerializeField] GameObject _caught;
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigidbody;
     private FixedJoint holdJoint;
@@ -97,6 +99,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     }
 
     bool isBeingChased;
+    
     [Button("Action mode")]
     public void OnMadeNoise()
     {
@@ -104,7 +107,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         _anim.SetBool("isPanicking", true);
         // enter chase mode.
         currentNoise = Instantiate(_noisePrefab, transform);
-        currentNoise.transform.position = Vector3.zero;
+        currentNoise.transform.localPosition = Vector3.zero;
         isBeingChased = true;
         StartCoroutine(ChaseCountdown());
     }
@@ -116,6 +119,12 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         _countdown.alpha = 1f;
         while (secondsRemaining != 0)
         {
+            if (isBeingChased == false)
+            {
+                // got caught.
+                _countdown.alpha = 0f;
+                yield break;
+            }
             _countdownText.text = secondsRemaining.ToString();
             yield return new WaitForSeconds(1);
             secondsRemaining--;
@@ -124,12 +133,21 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         StartCoroutine(chaseAvoided());
     }
 
-    [SerializeField] GameObject _chaseAvoided;
+    
     IEnumerator chaseAvoided()
     {
         _chaseAvoided.SetActive(true);
         yield return new WaitForSeconds(2f);
         _chaseAvoided.SetActive(false);
+    }
+    
+    IEnumerator caught()
+    {
+        isBeingChased = false;
+        _caught.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        _caught.SetActive(false);
+        OnChaseModeFinish();
     }
 
     public static Action OnChaseModeFinished = delegate {  };
@@ -157,7 +175,6 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         if (CurrentTool != null)
         {
             OnDropped(CurrentTool);
-
             CurrentTool.transform.SetParent(null);
             CurrentTool.GetComponent<Rigidbody>().useGravity = true;
 			availableTool.GetComponent<BoxCollider> ().enabled = true;
@@ -171,6 +188,17 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     {
         Destroy(CurrentTool.gameObject);
         CurrentTool = null;
+    }
+
+    public void OnCaught()
+    {
+        print("caught");
+        isBeingChased = false;
+        OnChaseModeFinish();
+        StartCoroutine(caught());
+        // stop countdown.;
+        // destroy tool.
+        // trigger xp change.
     }
 
     
@@ -189,7 +217,6 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             holdJoint.connectedBody = this.rigidbody;
 
             CurrentTool = availableTool.GetComponent<AbstractTool>();
-
             OnPickedUp(CurrentTool);
         }
     }
