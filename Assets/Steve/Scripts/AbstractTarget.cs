@@ -68,7 +68,12 @@ public abstract class AbstractTarget : MonoBehaviour
 
     private AbstractTool IsReactableTool()
     {
-        print("looking for ... " + ToddlerController.CurrentTool.name);
+        if (ToddlerController.CurrentTool == null)
+        {
+            print("Not holding a tool but checking if I can react with it...");
+            return null;
+        }
+        print("looking for ... " + ToddlerController.CurrentTool);
         print(_itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name));
         return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name);
     }
