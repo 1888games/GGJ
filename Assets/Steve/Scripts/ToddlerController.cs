@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class ToddlerController : MonoBehaviour
+public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 {
+    public static ToddlerController Instance;
     [SerializeField]
     private float walkRate = 1.0f;
+    
+    
     [SerializeField] Transform _hand;
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigidbody;
@@ -85,6 +89,11 @@ public class ToddlerController : MonoBehaviour
             availableTool = other.transform.parent.gameObject;
             PickupAttempt(availableTool.GetComponent<AbstractTool>());
         }
+    }
+
+    public void OnMadeNoise()
+    {
+        
     }
 
     private void OnTriggerExit(Collider other)
