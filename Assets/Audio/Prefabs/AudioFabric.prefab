@@ -66,7 +66,7 @@ MonoBehaviour:
   _spreadLevel: 0
   _spatialize: 1
   _dopplerLevel: 1
-  _maxDistance: 5
+  _maxDistance: 6
   _minDistance: 1
   _rolloffMode: 0
   _customCurvesType: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   _audioBusName: None
   _overrideAudioBus: 0
   _overrideMusicTimeSettings: 0
-  _musicTimeSettingsIndex: -1
+  _musicTimeSettingsIndex: 1
   _musicTempo: -1
   _musicTimeSignatureLower: 0
   _musicTimeSignatureUpper: 0
@@ -2219,7 +2219,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 0.1
+  _volume: 0.31622776
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -13913,7 +13913,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 0.1
+  _volume: 0.31622776
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
