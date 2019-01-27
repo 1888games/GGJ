@@ -121,16 +121,21 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             secondsRemaining--;
         }
         OnChaseModeFinish();
+        StartCoroutine(chaseAvoided());
     }
 
-//    [SerializeField] GameObject _chaseAvoided;
-//    IEnumerator chaseAvoided()
-//    {
-//        _chaseAvoided
-//    }
-    
+    [SerializeField] GameObject _chaseAvoided;
+    IEnumerator chaseAvoided()
+    {
+        _chaseAvoided.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        _chaseAvoided.SetActive(false);
+    }
+
+    public static Action OnChaseModeFinished = delegate {  };
     void OnChaseModeFinish()
     {
+        OnChaseModeFinished();
         _countdown.alpha = 0f;
         isBeingChased = false;
         Destroy(currentNoise);
@@ -160,6 +165,12 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
             Destroy(holdJoint);
         }
+    }
+
+    public void DestroyTool()
+    {
+        Destroy(CurrentTool.gameObject);
+        CurrentTool = null;
     }
 
     
