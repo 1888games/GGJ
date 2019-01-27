@@ -642,7 +642,7 @@ MonoBehaviour:
   currentLevelXPFloor: 0
   currentAnguish: 0
   newAnguish: 0
-  anguishMax: 250
+  anguishMax: 150
   anguishReducePerFrame: 0.01
   barWidthMax: 402
   addPerFrame: 1
@@ -17197,7 +17197,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: LVL 23
+  m_text: LVL 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc9f32b317f75436ab42c032dd485675, type: 2}
   m_sharedMaterial: {fileID: 21720829690926770, guid: cc9f32b317f75436ab42c032dd485675,
@@ -17267,7 +17267,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 749378090}
-    characterCount: 6
+    characterCount: 5
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -40992,7 +40992,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: LVL 4
+  m_text: A-OK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc9f32b317f75436ab42c032dd485675, type: 2}
   m_sharedMaterial: {fileID: 21720829690926770, guid: cc9f32b317f75436ab42c032dd485675,
@@ -41062,10 +41062,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1584427133}
-    characterCount: 5
+    characterCount: 4
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1

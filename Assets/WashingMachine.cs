@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+ 
 public class WashingMachine : AbstractTarget
 {
     
@@ -29,6 +29,7 @@ public class WashingMachine : AbstractTarget
     
     void ResetState()
     {
+    
         Animation animation = GetComponent<Animation>();
         animation.Stop();
        // transform.rotation = Quaternion.identity;

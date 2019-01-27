@@ -189,7 +189,6 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 		}
 
 		if (currentAnguish >= anguishMax) {
-			Debug.LogError ("GAME OVER!!!!!!!!!!!");
 
 			gameOver.SetActive (true);
 			

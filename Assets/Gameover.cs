@@ -11,7 +11,7 @@ public class Gameover : MonoBehaviour
     
     void OnEnable()
     {
-		_clip.Play ();
+		_clip.PlayDelayed (1f);
 		Pixelplacement.Tween.CanvasGroupAlpha(_adoptionNotice, 0f, 1f, 1.5f, 0.5f);
     }
 }
