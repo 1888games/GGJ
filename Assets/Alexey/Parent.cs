@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class Parent : MonoBehaviour
+public class Parent : AbstractTarget
 {
     NavMeshAgent _agent;
     Transform _target;
     [SerializeField] float _updatePathThrottleSec;
+    [SerializeField] GameObject _noisePrefab;
     float _lastTimePathUpdated;
     Animator _anim;
     void Awake()
@@ -50,5 +51,23 @@ public class Parent : MonoBehaviour
             _target = null;
             _anim.SetBool("isWalking", false);
         }
+    }
+
+    public override void React()
+    {
+        if (IsReactableTool())
+        {
+            Amuse();
+        }
+    }
+
+    private void Amuse()
+    {
+        print("Parent success reaction.");
+        Animation animation = GetComponent<Animation>();
+        if (animation != null)
+            animation.Play();
+        Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
+        Instantiate(_noisePrefab, transform.position, Quaternion.identity);
     }
 }

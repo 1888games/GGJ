@@ -20,22 +20,30 @@ public class Microwave : AbstractTarget
 
     private void killMicrowave()
     {
-        print("play kill sound");
+        print("Microwave kill success reaction.");
+        Animation animation = GetComponent<Animation>();
+        if (animation != null)
+            animation.Play();
+
         Fabric.EventManager.Instance.PostEvent("Microwave_Open", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_Electric_Shock", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_Fail_Beep", Fabric.EventAction.PlaySound, null, gameObject);
-        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+
+        ToddlerController.Instance.OnMadeNoise();
     }
 
     private void runMicrowave()
     {
+        print("Microwave run success reaction.");
+
         Fabric.EventManager.Instance.PostEvent("Microwave_Open", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
         Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
-        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+
+        ToddlerController.Instance.OnMadeNoise();
     }
 }

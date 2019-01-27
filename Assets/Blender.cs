@@ -20,9 +20,22 @@ public class Blender : AbstractTarget
     public override void React()
     {
         ToddlerController.Instance.DestroyTool();
+
+        if (IsReactableTool())
+        {
+            Blend();
+        }
+    }
+
+    private void Blend()
+    {
+        print("Blender success reaction.");
+
         Animation animation = GetComponent<Animation>();
-        animation.Play();
+        if (animation != null)
+            animation.Play();
         Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
+
         ToddlerController.Instance.OnMadeNoise();
     }
 }

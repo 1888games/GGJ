@@ -80,7 +80,7 @@ public abstract class AbstractTarget : MonoBehaviour
             print("Not holding a tool but checking if I can react with it...");
             return null;
         }
-        print("looking for ... " + ToddlerController.CurrentTool);
+        print("looking for ... " + ToddlerController.CurrentTool.name);
         print(_itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name));
         return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name);
     }
