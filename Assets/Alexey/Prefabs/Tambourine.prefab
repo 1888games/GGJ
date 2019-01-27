@@ -10155,6 +10155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsIWillReactWith:
   - {fileID: 1900967760037275159, guid: d4f39be947d48418485b01d2e7d02ca4, type: 3}
+  - {fileID: 1973275025811855786, guid: 030b254e553164a88b57624d50c60abf, type: 3}
+  - {fileID: 1977949206637233376, guid: 5ab621c89a98640efa33660114d3431e, type: 3}
+  - {fileID: 4894790315497831443, guid: 9c435863922dc4fe7a28c006dc31873d, type: 3}
+  _noisePrefab: {fileID: 0}
 --- !u!54 &1381114131
 Rigidbody:
   m_ObjectHideFlags: 0
