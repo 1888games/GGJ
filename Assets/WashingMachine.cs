@@ -1,11 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WashingMachine : AbstractTarget
 {
+    
     [SerializeField] GameObject _noisePrefab;
 
+	public Transform door;
+    
+     void OnEnable()
+    {
+        ToddlerController.OnChaseModeFinished += ResetState;
+    }
+    
     public override void React()
     {
         if (IsReactableTool())
@@ -16,6 +25,15 @@ public class WashingMachine : AbstractTarget
         {
             // do nothing
         }
+    }
+    
+    void ResetState()
+    {
+        Animation animation = GetComponent<Animation>();
+        animation.Stop();
+       // transform.rotation = Quaternion.identity;
+        
+        door.DORotate (new Vector3 (0f, 75f, 90f), 0.25f);
     }
 
     private void Wash()
@@ -32,5 +50,8 @@ public class WashingMachine : AbstractTarget
         Fabric.EventManager.Instance.PostEvent("Washing_Machine_Sequence", Fabric.EventAction.PlaySound, null, gameObject);
 
         ToddlerController.Instance.OnMadeNoise();
+
+		door.DORotate (new Vector3 (0f, 0f, 90f), 0.25f);
+        
     }
 }

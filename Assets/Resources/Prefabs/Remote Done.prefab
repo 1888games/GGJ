@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4208950591241570912}
   - component: {fileID: 6221113413671771215}
   m_Layer: 0
-  m_Name: Remote 1
+  m_Name: Remote Done
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,9 +102,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7890849499658498725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.025, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.05, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.02500001, z: 0}
+  m_LocalScale: {x: 0.20000018, y: 0.050000027, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5104867037820686316}
   m_RootOrder: 0
@@ -209,5 +209,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 49.999996, y: 52.650356, z: 4.0423346}
+  m_Size: {x: 49.999996, y: 53.13, z: 7.5}
   m_Center: {x: 0, y: 0, z: 0}

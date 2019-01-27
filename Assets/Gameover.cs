@@ -6,8 +6,12 @@ using UnityEngine;
 public class Gameover : MonoBehaviour
 {
     [SerializeField] CanvasGroup _adoptionNotice;
+    [SerializeField] AudioSource _clip;
+ 
+    
     void OnEnable()
     {
-        Pixelplacement.Tween.CanvasGroupAlpha(_adoptionNotice, 0f, 1f, 1.5f, 0.5f);
+		_clip.Play ();
+		Pixelplacement.Tween.CanvasGroupAlpha(_adoptionNotice, 0f, 1f, 1.5f, 0.5f);
     }
 }

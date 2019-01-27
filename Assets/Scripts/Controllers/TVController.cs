@@ -12,10 +12,7 @@ public class TVController : MonoBehaviourSingleton<TVController>
 
 	VideoPlayer videoPlayer;
 
-	void Awake () {
-		
-		music.playOnAwake = false;
-	}
+	
 
     void Start()
     {
