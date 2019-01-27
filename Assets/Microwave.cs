@@ -21,6 +21,9 @@ public class Microwave : AbstractTarget
     private void killMicrowave()
     {
         print("Microwave kill success reaction.");
+
+        ToddlerController.Instance.DestroyTool();
+
         Animation animation = GetComponent<Animation>();
         if (animation != null)
             animation.Play();
