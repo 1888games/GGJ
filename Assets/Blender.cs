@@ -4,9 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Blender : AbstractTarget
-{
-    [SerializeField] GameObject _noisePrefab;
-    
+{    
     
     public override void React()
     {
@@ -14,6 +12,7 @@ public class Blender : AbstractTarget
         Animation animation = GetComponent<Animation>();
         animation.Play();
         Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
-        Instantiate(_noisePrefab, transform.position,Quaternion.identity);
+        print("Toddler instance:" + ToddlerController.Instance);
+        ToddlerController.Instance.OnMadeNoise();
     }
 }

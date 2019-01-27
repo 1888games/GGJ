@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections;
 using System.Runtime.InteropServices;
+using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 {
-    public static ToddlerController Instance;
     [SerializeField]
     private float walkRate = 1.0f;
-    
-    
+
+    [SerializeField] GameObject _noisePrefab;
+    [SerializeField] CanvasGroup _countdown;
+    [SerializeField] TextMeshProUGUI _countdownText;
     [SerializeField] Transform _hand;
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigidbody;
@@ -20,6 +24,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     private bool waitingForConfirmation;
 
     private GameObject availableTool;
+    GameObject currentNoise;
 
     // Start is called before the first frame update
     void Start()
@@ -91,9 +96,46 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         }
     }
 
+    bool isBeingChased;
+    [Button("Action mode")]
     public void OnMadeNoise()
     {
-        
+        Fabric.EventManager.Instance.PostEvent("Music", Fabric.EventAction.SetSwitch, "ActionLoop");
+        _anim.SetBool("isPanicking", true);
+        // enter chase mode.
+        currentNoise = Instantiate(_noisePrefab, transform);
+        currentNoise.transform.position = Vector3.zero;
+        isBeingChased = true;
+        StartCoroutine(ChaseCountdown());
+    }
+
+    
+    IEnumerator ChaseCountdown()
+    {
+        int secondsRemaining = 10;
+        _countdown.alpha = 1f;
+        while (secondsRemaining != 0)
+        {
+            _countdownText.text = secondsRemaining.ToString();
+            yield return new WaitForSeconds(1);
+            secondsRemaining--;
+        }
+        OnChaseModeFinish();
+    }
+
+//    [SerializeField] GameObject _chaseAvoided;
+//    IEnumerator chaseAvoided()
+//    {
+//        _chaseAvoided
+//    }
+    
+    void OnChaseModeFinish()
+    {
+        _countdown.alpha = 0f;
+        isBeingChased = false;
+        Destroy(currentNoise);
+        _anim.SetBool("isPanicking", false);
+        Fabric.EventManager.Instance.PostEvent("Music", Fabric.EventAction.SetSwitch, "ExploLoop");
     }
 
     private void OnTriggerExit(Collider other)

@@ -27,6 +27,7 @@ public class Parent : MonoBehaviour
         if (_target == null)
         {
             _agent.isStopped = true;
+            _anim.SetBool("isWalking", false);
             // TODO: return to idle cycle;
         }
         else
@@ -42,6 +43,7 @@ public class Parent : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // catch the toddler.
         if (other.GetComponent<Noise>() != null)
         {
             // we've reached the source of the noise.
