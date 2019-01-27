@@ -53,7 +53,7 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 		interactLookup = new Dictionary<string, Vector2> ();
 		
 		
-		// FOR EACH TOOL, IT HAS A DICTIONARY OF TARGETS IT CAN REACT WITH
+		// FOR EACH TOOL, IT HAS A DICTIONARY OF TARGETS IT ddAN REACT WITH
 
 		combinationLookup.Add ("Spoon", new Dictionary<string, Vector2> ());
 		combinationLookup.Add ("Fork", new Dictionary<string, Vector2> ());
