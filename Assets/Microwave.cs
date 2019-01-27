@@ -23,7 +23,7 @@ public class Microwave : AbstractTarget
     {
         print("Microwave kill success reaction.");
 
-        ToddlerController.Instance.DestroyTool();
+        
 
         Animation animation = GetComponent<Animation>();
         if (animation != null)
@@ -38,6 +38,7 @@ public class Microwave : AbstractTarget
 //        Fabric.EventManager.Instance.PostEvent("Microwave_Fail_Beep", Fabric.EventAction.PlaySound, null, gameObject);
         _firePS.Play();
         ToddlerController.Instance.OnMadeNoise();
+        ToddlerController.Instance.DestroyTool();
     }
 
     private void runMicrowave()

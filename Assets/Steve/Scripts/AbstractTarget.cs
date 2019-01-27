@@ -84,7 +84,7 @@ public abstract class AbstractTarget : MonoBehaviour
     {
         if (ToddlerController.CurrentTool == null)
         {
-            print("Not holding a tool but checking if I can react with it...");
+            Debug.Log("Not holding a tool but checking if I can react with it...", gameObject);
             return null;
         }
         print("looking for ... " + ToddlerController.CurrentTool.name);

@@ -24,7 +24,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     private float radius;
     private float height;
 
-    private bool waitingForConfirmation;
+    [ShowInInspector] bool waitingForConfirmation;
 
     private GameObject availableTool;
     GameObject currentNoise;
@@ -59,6 +59,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         }
         else if (waitingForConfirmation && Input.GetKeyDown(KeyCode.Space))
         {
+            print("toddle pickup attempt.");
             waitingForConfirmation = false;
 
             DoPickup();
@@ -198,7 +199,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             CurrentTool.GetComponent<Rigidbody>().useGravity = true;
 			availableTool.GetComponent<BoxCollider> ().enabled = true;
             CurrentTool = null;
-
+            waitingForConfirmation = false;
             Destroy(holdJoint);
         }
     }
@@ -210,6 +211,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             print("trying to destroy a tool but it's null");
             return;
         }
+        waitingForConfirmation = false;
         Destroy(CurrentTool.gameObject);
         CurrentTool = null;
     }
@@ -241,6 +243,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             holdJoint.connectedBody = this.rigidbody;
 
             CurrentTool = availableTool.GetComponent<AbstractTool>();
+            waitingForConfirmation = false;
             OnPickedUp(CurrentTool);
         }
     }
