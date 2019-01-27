@@ -25,6 +25,8 @@ public class Oven : AbstractTarget
 
         ToddlerController.Instance.DestroyTool();
 
+        // TODO: Need correct sound for burning in oven
+
         Animation animation = GetComponent<Animation>();
         if (animation != null)
             animation.Play();
