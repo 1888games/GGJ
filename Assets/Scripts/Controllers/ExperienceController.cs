@@ -214,6 +214,8 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 
 		int labelIndex = (int)Mathf.Floor (((currentAnguish / anguishMax * 7f) - 0f));
 
+		labelIndex = Mathf.Clamp (labelIndex, 0, 7);
+
 		//Debug.Log (labelIndex + " " + currentAnguish + " / " + anguishMax);
 		
 		anguishLevelText.text = anguishLevels [labelIndex];
