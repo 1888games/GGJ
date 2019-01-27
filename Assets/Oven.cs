@@ -31,7 +31,7 @@ public class Oven : AbstractTarget
         Animation animation = GetComponent<Animation>();
         if (animation != null)
             animation.Play();
-        Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Oven_Sequence", Fabric.EventAction.PlaySound, null, gameObject);
         _firePS.Play();
         ToddlerController.Instance.OnMadeNoise();
     }

@@ -25,9 +25,7 @@ public class TV : AbstractTarget
 
     private void TurnOn()
     {
-        isOn = true;
-
-        // TODO: animation and sound effects?
+        isOn = TVController.Instance.ToggleTV();
 
         ToddlerController.Instance.OnMadeNoise();
 
@@ -35,8 +33,6 @@ public class TV : AbstractTarget
 
     private void TurnOff()
     {
-        isOn = false;
-
-        // TODO: turn off tv?
+        isOn = TVController.Instance.ToggleTV();
     }
 }
