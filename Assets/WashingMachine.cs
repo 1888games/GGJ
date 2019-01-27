@@ -29,7 +29,7 @@ public class WashingMachine : AbstractTarget
         Animation animation = GetComponent<Animation>();
         if (animation != null)
             animation.Play();
-        Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Washing_Machine_Sequence", Fabric.EventAction.PlaySound, null, gameObject);
 
         ToddlerController.Instance.OnMadeNoise();
     }
