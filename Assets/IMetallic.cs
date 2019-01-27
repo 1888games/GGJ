@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fork : AbstractTool, IMetallic
+public interface IMetallic
 {
-
 }

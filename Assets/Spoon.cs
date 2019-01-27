@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spoon : AbstractTool
+public class Spoon : AbstractTool, IMetallic
 {
     // Start is called before the first frame update
     void Start()
