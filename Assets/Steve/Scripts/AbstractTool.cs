@@ -47,15 +47,28 @@ public abstract class AbstractTool : MonoBehaviour
         }
     }
 
+
+	void SetMeshColor (MeshRenderer mesh, bool enable = true) {
+		
+		if (mesh != null) {
+			if (enable) {
+				mesh.material.color = Color.red;
+			} else {
+				mesh.material.color = Color.white;
+			}
+
+		}
+
+	}
+
     protected virtual void indicateProximity(bool enable = true)
     {
-        if (enable)
-        {
-            meshRenderer.material.color = Color.red;
-        }
-        else
-        {
-            meshRenderer.material.color = Color.white;
-        }
+
+		SetMeshColor (meshRenderer, enable);
+		
+		foreach (Transform child in this.transform) {
+
+			SetMeshColor (child.GetComponent<MeshRenderer> (), enable);
+		}
     }
 }
