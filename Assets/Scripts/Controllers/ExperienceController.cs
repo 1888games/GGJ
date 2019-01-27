@@ -95,8 +95,8 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 		combinationLookup ["Paper"].Add ("Blender", new Vector2 (20, 10));
 		combinationLookup ["Paper"].Add ("Oven", new Vector2 (15, 40));
 		
-		combinationLookup ["Toy"].Add ("Blender", new Vector2 (0, 40));
-		combinationLookup ["Toy"].Add ("Parent", new Vector2 (15, -80));
+		combinationLookup ["CuddlyToy"].Add ("Blender", new Vector2 (0, 40));
+		combinationLookup ["CuddlyToy"].Add ("Parent", new Vector2 (15, -80));
 		
 		combinationLookup ["Biscuit"].Add ("Blender", new Vector2 (15, 30));
 		combinationLookup ["Biscuit"].Add ("Parent", new Vector2 (5, -100));
