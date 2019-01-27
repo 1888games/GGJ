@@ -15,5 +15,6 @@ public class Noise : MonoBehaviour
     void Emit()
     {
         OnEmitted(transform);
+        Fabric.EventManager.Instance.PostEvent("Music", Fabric.EventAction.SetSwitch, "ActionLoop", gameObject);
     }
 }

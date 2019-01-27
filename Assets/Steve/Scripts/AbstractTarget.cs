@@ -29,7 +29,7 @@ public abstract class AbstractTarget : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(name + " trigger enter.", gameObject);
+//        Debug.Log(name + " trigger enter.", gameObject);
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
         {
             if (IsReactableTool())
