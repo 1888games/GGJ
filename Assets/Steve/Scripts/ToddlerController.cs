@@ -66,7 +66,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         else
         {
             TurnAndRotate();
-            _anim.SetBool("isWalking", true);
+            if(_anim.GetBool("isPanicking") == false) _anim.SetBool("isWalking", true);
         }
     }
 
@@ -81,6 +81,11 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             transform.eulerAngles = new Vector3(0f, Mathf.Atan2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Mathf.Rad2Deg, 0f);
 
             transform.position = (new Vector3(xMove, transform.position.y, yMove));
+            if(_anim.GetBool("isPanicking") == false) _anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            _anim.SetBool("isWalking", false);
         }
         
     }
@@ -117,6 +122,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     public void OnMadeNoise()
     {
         Fabric.EventManager.Instance.PostEvent("Music", Fabric.EventAction.SetSwitch, "ActionLoop");
+        _anim.SetBool("isWalking", false);
         _anim.SetBool("isPanicking", true);
         // enter chase mode.
         currentNoise = Instantiate(_noisePrefab, transform);
@@ -210,11 +216,10 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     public void OnCaught()
     {
-        
-        print("caught");
         isBeingChased = false;
         OnChaseModeFinish();
         StartCoroutine(caught());
+        ExperienceController.Instance.UpdateExperienceAndAnguish("Caught",null);
         // stop countdown.;
         // destroy tool.
         // trigger xp change.

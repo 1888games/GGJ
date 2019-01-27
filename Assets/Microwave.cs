@@ -30,6 +30,7 @@ public class Microwave : AbstractTarget
             animation.Play();
 
         Fabric.EventManager.Instance.PostEvent("Microwave_Sequence", Fabric.EventAction.PlaySound, null, gameObject);
+        ExperienceController.Instance.UpdateExperienceAndAnguish(name, ToddlerController.CurrentTool.name);
 //        Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
 //        Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
 //        Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
