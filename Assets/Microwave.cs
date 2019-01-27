@@ -5,6 +5,7 @@ using UnityEngine;
 public class Microwave : AbstractTarget
 {
     [SerializeField] GameObject _noisePrefab;
+    [SerializeField] ParticleSystem _firePS;
 
     public override void React()
     {
@@ -28,13 +29,13 @@ public class Microwave : AbstractTarget
         if (animation != null)
             animation.Play();
 
-        Fabric.EventManager.Instance.PostEvent("Microwave_Open", Fabric.EventAction.PlaySound, null, gameObject);
-        Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
-        Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
-        Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
-        Fabric.EventManager.Instance.PostEvent("Microwave_Electric_Shock", Fabric.EventAction.PlaySound, null, gameObject);
-        Fabric.EventManager.Instance.PostEvent("Microwave_Fail_Beep", Fabric.EventAction.PlaySound, null, gameObject);
-
+        Fabric.EventManager.Instance.PostEvent("Microwave_Sequence", Fabric.EventAction.PlaySound, null, gameObject);
+//        Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
+//        Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
+//        Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
+//        Fabric.EventManager.Instance.PostEvent("Microwave_Electric_Shock", Fabric.EventAction.PlaySound, null, gameObject);
+//        Fabric.EventManager.Instance.PostEvent("Microwave_Fail_Beep", Fabric.EventAction.PlaySound, null, gameObject);
+        _firePS.Play();
         ToddlerController.Instance.OnMadeNoise();
     }
 
