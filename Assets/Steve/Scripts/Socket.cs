@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Socket : AbstractTarget
 {
-    public override void React()
+	public static bool OSSupportsIPv6 { get; internal set; }
+
+	public override void React()
     {
         // play sound
         // play particle effects
