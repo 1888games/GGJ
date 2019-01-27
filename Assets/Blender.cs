@@ -19,8 +19,6 @@ public class Blender : AbstractTarget
     
     public override void React()
     {
-        ToddlerController.Instance.DestroyTool();
-
         if (IsReactableTool())
         {
             Blend();
@@ -37,5 +35,6 @@ public class Blender : AbstractTarget
         Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
 
         ToddlerController.Instance.OnMadeNoise();
+        ToddlerController.Instance.DestroyTool();
     }
 }

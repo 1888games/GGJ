@@ -3200,8 +3200,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsIWillReactWith:
   - {fileID: 1900967760037275159, guid: d4f39be947d48418485b01d2e7d02ca4, type: 3}
-  _noisePrefab: {fileID: 824947739031741212, guid: 3b8fb6108418741f4b55a5d63126890f,
-    type: 3}
 --- !u!54 &7929583021937717225
 Rigidbody:
   m_ObjectHideFlags: 0

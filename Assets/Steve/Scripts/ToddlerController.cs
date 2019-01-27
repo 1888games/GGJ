@@ -186,12 +186,18 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     public void DestroyTool()
     {
+        if (CurrentTool == null)
+        {
+            print("trying to destroy a tool but it's null");
+            return;
+        }
         Destroy(CurrentTool.gameObject);
         CurrentTool = null;
     }
 
     public void OnCaught()
     {
+        
         print("caught");
         isBeingChased = false;
         OnChaseModeFinish();

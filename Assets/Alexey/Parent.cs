@@ -31,6 +31,7 @@ public class Parent : AbstractTarget
         {
             _agent.isStopped = true;
             _anim.SetBool("isWalking", false);
+            
             // TODO: return to idle cycle;
         }
         else
@@ -41,8 +42,11 @@ public class Parent : AbstractTarget
                 _agent.isStopped = false;
             }
 
+//            print("distance to targeT: " + (Vector3.Distance(transform.position, _target.position)));
+
             if (Vector3.Distance(transform.position, _target.position) < _reactToToddlerDistance)
             {
+//                print("catch toddler");
                 // catch the toddler
                 ToddlerController.Instance.OnCaught();
                 _anim.SetBool("isWalking", false);
