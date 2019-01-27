@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class PlayVideo : MonoBehaviourSingleton<PlayVideo>
+public class TVController : MonoBehaviourSingleton<TVController>
 {
 	//public UnityEngine.Video.VideoClip videoClip;
 
