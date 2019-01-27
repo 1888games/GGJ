@@ -2,30 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Oven : AbstractTarget
+public class WashingMachine : AbstractTarget
 {
     [SerializeField] GameObject _noisePrefab;
 
     public override void React()
     {
-        if (ToddlerController.CurrentTool is IBurnable)
+        if (IsReactableTool())
         {
-            Burn();
+            Wash();
         }
         else
         {
-            // TODO: Do we allow cook only?  What happens to tool afterwards?
-            //Cook();
+            // do nothing
         }
     }
 
-    private void Burn()
+    private void Wash()
     {
-        print("Oven success reaction.");
+        print("Washing machine success reaction.");
 
         ToddlerController.Instance.DestroyTool();
 
-        // TODO: Need correct sound for burning in oven
+        // TODO: Need correct sound for washing machine 
 
         Animation animation = GetComponent<Animation>();
         if (animation != null)
@@ -33,10 +32,5 @@ public class Oven : AbstractTarget
         Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
 
         ToddlerController.Instance.OnMadeNoise();
-    }
-
-    private void Cook()
-    {
-        // TODO: animation or sound?
     }
 }
