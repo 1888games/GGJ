@@ -5,11 +5,17 @@ using UnityEngine;
 public class TV : AbstractTarget
 {
     [SerializeField] GameObject _noisePrefab;
+
+    bool isOn;
+
     public override void React()
     {
         if (IsReactableTool())
         {
-            TurnOn();
+            if (isOn)
+                TurnOff();
+            else
+                TurnOn();
         }
         else
         {
@@ -19,8 +25,18 @@ public class TV : AbstractTarget
 
     private void TurnOn()
     {
+        isOn = true;
+
         // TODO: animation and sound effects?
 
         ToddlerController.Instance.OnMadeNoise();
+
+    }
+
+    private void TurnOff()
+    {
+        isOn = false;
+
+        // TODO: turn off tv?
     }
 }
