@@ -4,19 +4,38 @@ using UnityEngine;
 
 public class Microwave : AbstractTarget
 {
-    
+    [SerializeField] GameObject _noisePrefab;
+
     public override void React()
     {
-        if (ToddlerController.CurrentTool == null)
+        if (ToddlerController.CurrentTool is IMetallic)
         {
-            Fabric.EventManager.Instance.PostEvent("Simple", Fabric.EventAction.PlaySound, null, gameObject);
-
-            // do stuff
-            
+            killMicrowave();
         }
         else
         {
-            // explode.
+            runMicrowave();
         }
+    }
+
+    private void killMicrowave()
+    {
+        print("play kill sound");
+        Fabric.EventManager.Instance.PostEvent("Microwave_Open", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_Electric_Shock", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_Fail_Beep", Fabric.EventAction.PlaySound, null, gameObject);
+        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+    }
+
+    private void runMicrowave()
+    {
+        Fabric.EventManager.Instance.PostEvent("Microwave_Open", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_Close", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_Beep", Fabric.EventAction.PlaySound, null, gameObject);
+        Fabric.EventManager.Instance.PostEvent("Microwave_On", Fabric.EventAction.PlaySound, null, gameObject);
+        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
     }
 }

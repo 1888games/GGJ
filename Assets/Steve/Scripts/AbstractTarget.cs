@@ -66,7 +66,7 @@ public abstract class AbstractTarget : MonoBehaviour
         }
     }
 
-    private AbstractTool IsReactableTool()
+    protected AbstractTool IsReactableTool()
     {
         if (ToddlerController.CurrentTool == null)
         {
