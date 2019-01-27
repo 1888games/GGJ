@@ -21,10 +21,9 @@ public class Socket : AbstractTarget
 
     private void Shock()
     {
-        print("socket success reaction.");
-        // TODO: animation or particle effects?
         Fabric.EventManager.Instance.PostEvent("Powerplug_Shock", Fabric.EventAction.PlaySound, null, gameObject);
         ToddlerController.Instance.OnMadeNoise();
+        ExperienceController.Instance.UpdateExperienceAndAnguish(name, ToddlerController.CurrentTool.name);
         ToddlerController.Instance.DestroyTool();
         _ps.Play();
 //        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
