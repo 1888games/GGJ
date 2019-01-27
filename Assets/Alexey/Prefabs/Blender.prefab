@@ -3161,6 +3161,7 @@ GameObject:
   - component: {fileID: 7929583021937717226}
   - component: {fileID: 7929583021937717225}
   - component: {fileID: 7929583021937717224}
+  - component: {fileID: 1727862201}
   m_Layer: 0
   m_Name: Blender
   m_TagString: Target
@@ -3198,7 +3199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemsIWillReactWith:
-  - {fileID: 0}
+  - {fileID: 1900967760037275159, guid: d4f39be947d48418485b01d2e7d02ca4, type: 3}
+  _noisePrefab: {fileID: 824947739031741212, guid: 3b8fb6108418741f4b55a5d63126890f,
+    type: 3}
 --- !u!54 &7929583021937717225
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3228,3 +3231,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9126742, y: 1, z: 0.9640188}
   m_Center: {x: -0.25355852, y: 0, z: 0.15768051}
+--- !u!111 &1727862201
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929583021937717230}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c51746519a2954a5e985a8183c297833, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c51746519a2954a5e985a8183c297833, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
