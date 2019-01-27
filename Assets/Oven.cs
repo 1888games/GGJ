@@ -5,6 +5,7 @@ using UnityEngine;
 public class Oven : AbstractTarget
 {
     [SerializeField] GameObject _noisePrefab;
+    [SerializeField] ParticleSystem _firePS;
 
     public override void React()
     {
@@ -31,7 +32,7 @@ public class Oven : AbstractTarget
         if (animation != null)
             animation.Play();
         Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
-
+        _firePS.Play();
         ToddlerController.Instance.OnMadeNoise();
     }
 
