@@ -15,8 +15,9 @@ namespace Pixelplacement
     {
         public static string GetIP(ADDRESSFAM Addfam)
         {
+            
             //Return null if ADDRESSFAM is Ipv6 but Os does not support it
-            if (Addfam == ADDRESSFAM.IPv6 && !Socket.OSSupportsIPv6)
+            if (Addfam == ADDRESSFAM.IPv6 && !System.Net.Sockets.Socket.OSSupportsIPv6)
             {
                 return null;
             }
