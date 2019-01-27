@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Oven : AbstractTarget
 {
@@ -25,6 +26,7 @@ public class Oven : AbstractTarget
         print("Oven success reaction.");
 
         ToddlerController.Instance.DestroyTool();
+//        SceneManager.LoadScene()
 
         // TODO: Need correct sound for burning in oven
 

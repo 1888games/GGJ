@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
@@ -97,6 +98,12 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     private float GetWalkRate()
     {
         return this.walkRate;
+    }
+
+    [Button("Reload game")]
+    void ReloadGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -220,9 +227,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         OnChaseModeFinish();
         StartCoroutine(caught());
         ExperienceController.Instance.UpdateExperienceAndAnguish("Caught",null);
-        // stop countdown.;
-        // destroy tool.
-        // trigger xp change.
+        Fabric.EventManager.Instance.PostEvent("Jingle_Neg", Fabric.EventAction.PlaySound, null, gameObject);
     }
 
     

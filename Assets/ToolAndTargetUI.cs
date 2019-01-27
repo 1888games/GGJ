@@ -115,12 +115,10 @@ public class ToolAndTargetUI : MonoBehaviour {
     }
      
     void OnDroppedObject (AbstractTool tool) {
- 
         carryingBar.DOFade (0f, 1f);
         plusBar.DOFade (0f, 1f);
         targetBar.DOFade (0f, 1f);
         spaceText.DOFade (0f, 1f);
- 
     }
      
     void OnApproachObject (AbstractTool tool, AbstractTarget target) {
