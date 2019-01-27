@@ -32,6 +32,7 @@ public class Oven : AbstractTarget
         if (animation != null)
             animation.Play();
         Fabric.EventManager.Instance.PostEvent("Broken_Blender", Fabric.EventAction.PlaySound, null, gameObject);
+        ExperienceController.Instance.UpdateExperienceAndAnguish(name,ToddlerController.CurrentTool.name );
         _firePS.Play();
         ToddlerController.Instance.OnMadeNoise();
     }

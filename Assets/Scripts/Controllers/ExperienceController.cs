@@ -12,7 +12,7 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 	private Dictionary<string, Dictionary<string, Vector2>> combinationLookup;
 	private Dictionary<string, Vector2> interactLookup;
 
-	GameObject gameOver;
+	[SerializeField] GameObject gameOver;
 
 	public int currentLevel = 1;
 	public float currentXP = 0f;
@@ -118,7 +118,7 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 		interactLookup.Add ("Dance", new Vector2 (20, -50));
 
 
-		gameOver = GameObject.Find ("Game over (1)");
+//		gameOver = GameObject.Find ("Game over (1)");
 		
 		
     }
