@@ -25,15 +25,10 @@ public class ToolAndTargetUI : MonoBehaviour {
 		ToddlerController.OnDropped += OnDroppedObject;
 		ToddlerController.PickupAttempt += OnAttemptPickup;
 		ToddlerController.OnWalkaway += OnCancelPickup;
-
-		ToddlerController.OnChaseModeFinished += OnChaseFinished;
-		
 		
 
 		AbstractTarget.InteractionAttempt += OnApproachObject;
 		AbstractTarget.OnWalkaway += OnCancelInteract;
-		AbstractTarget.ConfirmationReceived += CancelAll;
-	
 		
 		
     }
@@ -48,18 +43,7 @@ public class ToolAndTargetUI : MonoBehaviour {
         OnPickedUpObject (null);
  
     }
-
-	void OnChaseFinished () {
-
-		spaceText.DOFade (0f, 1f);
-		carryingBar.DOFade (0f, 1f);
-		targetBar.DOFade (0f, 1f);
-        plusBar.DOFade (0f, 1f);
-
-
-	}
-	
-	
+ 
     [Button ("test drop")]
     void TestDrop () {
  
@@ -112,19 +96,10 @@ public class ToolAndTargetUI : MonoBehaviour {
 	void OnCancelInteract (AbstractTool tool, AbstractTarget target) {
 			
 		spaceText.DOFade (0f, 1f);
-		targetBar.DOFade (0f, 1f);
-		plusBar.DOFade (0f, 1f);
-      
-	}
-
-
-	void CancelAll (AbstractTool tool, AbstractTarget target) {
-
-		spaceText.DOFade (0f, 1f);
 		carryingBar.DOFade (0f, 1f);
 		targetBar.DOFade (0f, 1f);
-        plusBar.DOFade (0f, 1f);
-
+        spaceText.DOFade (0f, 1f);
+		
 	}
  
     void OnPickedUpObject (AbstractTool tool) {
