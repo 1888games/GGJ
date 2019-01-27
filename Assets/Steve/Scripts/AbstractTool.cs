@@ -65,10 +65,12 @@ public abstract class AbstractTool : MonoBehaviour
     {
 
 		SetMeshColor (meshRenderer, enable);
-		
-		foreach (Transform child in this.transform) {
 
-			SetMeshColor (child.GetComponent<MeshRenderer> (), enable);
+		foreach (Transform child in this.transform.Find("Trigger")) {
+
+				SetMeshColor (child.GetComponent<MeshRenderer> (), enable);
 		}
+		
+	
     }
 }
