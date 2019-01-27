@@ -11,7 +11,8 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 
 	private Dictionary<string, Dictionary<string, Vector2>> combinationLookup;
 	private Dictionary<string, Vector2> interactLookup;
-	
+
+	GameObject gameOver;
 
 	public int currentLevel = 1;
 	public float currentXP = 0f;
@@ -115,9 +116,9 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 		interactLookup.Add ("Sing", new Vector2 (15, -30));
 		interactLookup.Add ("Cuddle", new Vector2 (5, -40));
 		interactLookup.Add ("Dance", new Vector2 (20, -50));
-		
-		
-		
+
+
+		gameOver = GameObject.Find ("Game over (1)");
 		
 		
     }
@@ -189,6 +190,10 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 
 		if (currentAnguish >= anguishMax) {
 			Debug.LogError ("GAME OVER!!!!!!!!!!!");
+
+			gameOver.SetActive (true);
+			
+			
 			
 			
 
