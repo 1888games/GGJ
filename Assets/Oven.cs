@@ -14,13 +14,17 @@ public class Oven : AbstractTarget
         }
         else
         {
-            Cook();
+            // TODO: Do we allow cook only?  What happens to tool afterwards?
+            //Cook();
         }
     }
 
     private void Burn()
     {
         print("Oven success reaction.");
+
+        ToddlerController.Instance.DestroyTool();
+
         Animation animation = GetComponent<Animation>();
         if (animation != null)
             animation.Play();

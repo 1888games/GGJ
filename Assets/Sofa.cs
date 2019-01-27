@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Sofa : AbstractTarget
 {
+    [SerializeField]
+    Material sofaMaterial;
+
+    [SerializeField]
+    Texture graffitiedTexture;
+
     public override void React()
     {
         if (IsReactableTool())
@@ -18,6 +24,6 @@ public class Sofa : AbstractTarget
 
     private void Deface()
     {
-        // TODO: change sofa material
+        sofaMaterial.mainTexture = graffitiedTexture;
     }
 }
