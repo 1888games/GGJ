@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spoon : AbstractTool, IMetallic
+public class Biscuit : AbstractTool, IBurnable
 {
 
 }

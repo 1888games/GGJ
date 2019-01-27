@@ -1,14 +1,4 @@
-public class CuddlyToy : AbstractTool
+public class CuddlyToy : AbstractTool, IBurnable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
