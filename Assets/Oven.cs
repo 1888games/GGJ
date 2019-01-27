@@ -25,7 +25,6 @@ public class Oven : AbstractTarget
     {
         print("Oven success reaction.");
 
-        ToddlerController.Instance.DestroyTool();
 //        SceneManager.LoadScene()
 
         // TODO: Need correct sound for burning in oven
@@ -37,6 +36,8 @@ public class Oven : AbstractTarget
         ExperienceController.Instance.UpdateExperienceAndAnguish(name,ToddlerController.CurrentTool.name );
         _firePS.Play();
         ToddlerController.Instance.OnMadeNoise();
+        ToddlerController.Instance.DestroyTool();
+
     }
 
     private void Cook()
