@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public abstract class AbstractTarget : MonoBehaviour
@@ -50,6 +51,12 @@ public abstract class AbstractTarget : MonoBehaviour
                 OnWalkaway(ToddlerController.CurrentTool, this);
             }
         }
+    }
+
+    [Button("Test reaction")]
+    void ForceReaction()
+    {
+       React(); 
     }
 
     public virtual void TryReact()
