@@ -223,7 +223,17 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 
 	}
 
+	public void Caught () {
+	
+		UpdateAnguish (50f);
+	}
+	
 	public void UpdateExperienceAndAnguish (string targetName, string toolName) {
+
+		if (targetName == "Caught") {
+			Caught ();
+			return;
+		}
 
 		Vector2 reaction = Vector2.zero;
 
