@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using Random = System.Random;
 
 public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 {
@@ -27,6 +28,11 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     private GameObject availableTool;
     GameObject currentNoise;
+    string currentParentAction;
+    
+    string[] ParentActions = {"Speak", "Sing", "Cuddle", "Dance"};
+
+    bool isBeingChased;
 
     // Start is called before the first frame update
     void Start()
@@ -96,9 +102,16 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             availableTool = other.transform.parent.gameObject;
             PickupAttempt(availableTool.GetComponent<AbstractTool>());
         }
+
+//        else if (other.gameObject.CompareTag("Parent"))
+//        {
+//            waitingForConfirmation = true;
+//            currentParentAction = ParentActions[UnityEngine.Random.Range(0, ParentActions.Length)];
+//            OnParentApproached(currentParentAction);
+//        }
     }
 
-    bool isBeingChased;
+    
     
     [Button("Action mode")]
     public void OnMadeNoise()
@@ -229,6 +242,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     public static AbstractTool CurrentTool;
 
+    public static Action<string> OnParentApproached = delegate {  };
     public static Action<AbstractTool> PickupAttempt= delegate {  };
     public static Action<AbstractTool> OnWalkaway = delegate { };
     public static Action<AbstractTool> OnPickedUp= delegate {  };

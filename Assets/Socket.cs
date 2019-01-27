@@ -5,6 +5,7 @@ using UnityEngine;
 public class Socket : AbstractTarget
 {
     [SerializeField] GameObject _noisePrefab;
+    [SerializeField] ParticleSystem _ps;
    
     public override void React()
     {
@@ -20,11 +21,12 @@ public class Socket : AbstractTarget
 
     private void Shock()
     {
-        print("Tambourine success reaction.");
-
+        print("socket success reaction.");
         // TODO: animation or particle effects?
-
         Fabric.EventManager.Instance.PostEvent("Powerplug_Shock", Fabric.EventAction.PlaySound, null, gameObject);
-        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+        ToddlerController.Instance.OnMadeNoise();
+        ToddlerController.Instance.DestroyTool();
+        _ps.Play();
+//        Instantiate(_noisePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
     }
 }
