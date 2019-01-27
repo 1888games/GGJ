@@ -61,7 +61,7 @@ public class ExperienceController : MonoBehaviourSingleton<ExperienceController>
 		combinationLookup.Add ("Plate", new Dictionary<string, Vector2> ());
 		combinationLookup.Add ("Foil", new Dictionary<string, Vector2> ());
 		combinationLookup.Add ("Paper", new Dictionary<string, Vector2> ());
-		combinationLookup.Add ("Toy", new Dictionary<string, Vector2> ());
+		combinationLookup.Add ("CuddlyToy", new Dictionary<string, Vector2> ());
 		combinationLookup.Add ("Biscuit", new Dictionary<string, Vector2> ());
 		combinationLookup.Add ("Drawing", new Dictionary<string, Vector2> ());
 		combinationLookup.Add ("Bleach", new Dictionary<string, Vector2> ());
