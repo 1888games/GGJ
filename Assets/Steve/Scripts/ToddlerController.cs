@@ -82,14 +82,14 @@ public class ToddlerController : MonoBehaviour
         if (!waitingForConfirmation && other.gameObject.CompareTag("Tool"))
         {
             waitingForConfirmation = true;
-            availableTool = other.gameObject;
+            availableTool = other.transform.parent.gameObject;
             PickupAttempt(availableTool.GetComponent<AbstractTool>());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Tool") && availableTool == other.gameObject)
+        if (other.gameObject.CompareTag("Tool") && availableTool == other.transform.parent.gameObject)
         {
             OnWalkaway(availableTool.GetComponent<AbstractTool>());
             availableTool = null;
@@ -104,6 +104,7 @@ public class ToddlerController : MonoBehaviour
 
             CurrentTool.transform.SetParent(null);
             CurrentTool.GetComponent<Rigidbody>().useGravity = true;
+			availableTool.GetComponent<BoxCollider> ().enabled = true;
             CurrentTool = null;
 
             Destroy(holdJoint);
@@ -119,6 +120,7 @@ public class ToddlerController : MonoBehaviour
             Vector3 toolSize = availableTool.GetComponent<BoxCollider>().size;
             availableTool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
             availableTool.GetComponent<Rigidbody>().useGravity = false;
+			availableTool.GetComponent<BoxCollider> ().enabled = false;
 
             holdJoint = availableTool.AddComponent<FixedJoint>();
             holdJoint.breakForce = 10000f; // Play with this value
