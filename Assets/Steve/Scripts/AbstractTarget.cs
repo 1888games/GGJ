@@ -6,7 +6,9 @@ using UnityEngine;
 public abstract class AbstractTarget : MonoBehaviour
 {
     [SerializeField] protected List<AbstractTool> _itemsIWillReactWith;
+ 
 
+	
     protected bool waitingForConfirmation;
 
     // Start is called before the first frame update
@@ -32,11 +34,10 @@ public abstract class AbstractTarget : MonoBehaviour
         Debug.Log(name + " trigger enter.", gameObject);
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
         {
-            if (IsReactableTool())
-            {
-                waitingForConfirmation = true;
-                InteractionAttempt(ToddlerController.CurrentTool, this);
-            }
+			if (IsReactableTool ()) {
+				waitingForConfirmation = true;
+				InteractionAttempt (ToddlerController.CurrentTool, this);
+			}
         }
     }
 
@@ -68,9 +69,15 @@ public abstract class AbstractTarget : MonoBehaviour
 
     private AbstractTool IsReactableTool()
     {
-        print("looking for ... " + ToddlerController.CurrentTool.name);
-        print(_itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name));
-        return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name);
+
+		if (ToddlerController.CurrentTool != null) {
+
+			print ("looking for ... " + ToddlerController.CurrentTool.name);
+			print (_itemsIWillReactWith.Find (tool => tool.name == ToddlerController.CurrentTool.name));
+			return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name);
+		}
+
+		return null;
     }
 
     public abstract void React();
