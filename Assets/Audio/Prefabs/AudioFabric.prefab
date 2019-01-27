@@ -116,7 +116,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 441073709}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -219,7 +219,7 @@ MonoBehaviour:
   _musicTempo: -1
   _musicTimeSignatureLower: 0
   _musicTimeSignatureUpper: 0
-  _musicTimeResetOnPlay: 0
+  _musicTimeResetOnPlay: 1
   _midiProperties:
     _overrideParentNoteTracking: 0
     _noteTracking: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 567001715}
   _onEventNotifyEventName: 
   _transitions:
   - _fromComponent:
@@ -254,7 +254,7 @@ MonoBehaviour:
       _musicSyncType: 2
     _toComponent:
       _component: {fileID: 9178585248128008791}
-      _musicSyncType: 0
+      _musicSyncType: 1
   - _fromComponent:
       _component: {fileID: 9178585248128008791}
       _musicSyncType: 0
@@ -263,40 +263,40 @@ MonoBehaviour:
       _musicSyncType: 2
     _toComponent:
       _component: {fileID: 754653530}
-      _musicSyncType: 0
+      _musicSyncType: 1
   - _fromComponent:
       _component: {fileID: 754653530}
       _musicSyncType: 0
     _transition:
       _component: {fileID: 113277021078678026}
-      _musicSyncType: 1
+      _musicSyncType: 2
     _toComponent:
       _component: {fileID: 7202789117772534455}
-      _musicSyncType: 0
+      _musicSyncType: 1
   - _fromComponent:
       _component: {fileID: 7202789117772534455}
       _musicSyncType: 0
     _transition:
       _component: {fileID: 147596557167768882}
-      _musicSyncType: 1
+      _musicSyncType: 2
     _toComponent:
       _component: {fileID: 754653530}
-      _musicSyncType: 0
+      _musicSyncType: 1
   - _fromComponent:
       _component: {fileID: 9178585248128008791}
-      _musicSyncType: 0
+      _musicSyncType: 1
     _transition:
       _component: {fileID: 113277021078678026}
-      _musicSyncType: 1
+      _musicSyncType: 2
     _toComponent:
       _component: {fileID: 7202789117772534455}
       _musicSyncType: 0
   - _fromComponent:
       _component: {fileID: 7202789117772534455}
-      _musicSyncType: 0
+      _musicSyncType: 1
     _transition:
       _component: {fileID: 147596557167768882}
-      _musicSyncType: 1
+      _musicSyncType: 2
     _toComponent:
       _component: {fileID: 9178585248128008791}
       _musicSyncType: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 754653530}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0d17ee009b70a6347b891ad8d25c7609, type: 3}
   _audioClipHandle:
@@ -601,7 +601,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4058871727887954809}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 64000000640000006400000064000000
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Toy_Squeak
-  _eventID: 0
+  _eventID: -2064507103
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -760,7 +760,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1504430789444410439}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -881,7 +881,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2529055575252539496}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7868e5082dc47469ca0101686242b483, type: 3}
   _audioClipHandle:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 147596557167768882}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 8991937cf79c4f24c85898d69e4ee78a, type: 3}
   _audioClipHandle:
@@ -1211,7 +1211,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3553555575542182884}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c2a19df8ae7c041aa9c7cf478efd3cb0, type: 3}
   _audioClipHandle:
@@ -1359,7 +1359,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8710938345113210561}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 36febe89005fb4e0b93603027481b42e, type: 3}
   _audioClipHandle:
@@ -1507,7 +1507,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2294785273233447807}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f2f7643e014b64996889455fe92189a1, type: 3}
   _audioClipHandle:
@@ -1656,7 +1656,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1966878123933518496}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ba4f1a122a6ef433c8ff2345b2af6065, type: 3}
   _audioClipHandle:
@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_Beep
-  _eventID: 0
+  _eventID: 167160208
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -1839,7 +1839,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8486695304139516370}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b468eec4bd7c94c32b59b16e56c32e1c, type: 3}
   _audioClipHandle:
@@ -2021,7 +2021,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3976654468789132797}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0542bf909f4494a51b750fe246831abb, type: 3}
   _audioClipHandle:
@@ -2169,7 +2169,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8919023062202828825}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: bf7fce8081f4a4aeeaebe2389c2c8b9d, type: 3}
   _audioClipHandle:
@@ -2317,7 +2317,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7934023361924258368}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 44ffb2ee0fae44869846c517291fd50a, type: 3}
   _audioClipHandle:
@@ -2471,7 +2471,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6664410384441645579}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -2591,7 +2591,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 113277021078678026}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: bab056b6069e3f445b2693da4b57136c, type: 3}
   _audioClipHandle:
@@ -2739,7 +2739,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1829556646687160493}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 8f9de55bc99e74dc496d3c112dab8de3, type: 3}
   _audioClipHandle:
@@ -2887,7 +2887,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7063703058084339511}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ff17048547a3e43e99bab213deedd2ec, type: 3}
   _audioClipHandle:
@@ -3035,7 +3035,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5579295887196555171}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -3156,7 +3156,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3008676955271258619}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d2420514903494c619cc2f1789b10182, type: 3}
   _audioClipHandle:
@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_Electric_Shock
-  _eventID: 0
+  _eventID: -872597354
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -3338,7 +3338,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 283351333903984392}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 4b6c2451fa0604b3db94cfb91d3531ce, type: 3}
   _audioClipHandle:
@@ -3486,7 +3486,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5994400881800354200}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 60e88312b7908498c99732f84f6b013a, type: 3}
   _audioClipHandle:
@@ -3634,7 +3634,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2523627731864947632}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d8dbf5f3e16fe484392d914cf865e013, type: 3}
   _audioClipHandle:
@@ -3782,7 +3782,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8197492105108837022}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: cbaab12b6308441aead44ce5e0829a4b, type: 3}
   _audioClipHandle:
@@ -3930,7 +3930,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1757247434163991661}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: cd3732b4d96ec49a99135daf5e0d299d, type: 3}
   _audioClipHandle:
@@ -4078,7 +4078,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8555730350797736483}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 11089a6be0339492fb5a8f85d1ccb2fe, type: 3}
   _audioClipHandle:
@@ -4226,7 +4226,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3451201316419481387}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: bd4e2bb25c52943d5aa1cee8470fde90, type: 3}
   _audioClipHandle:
@@ -4374,7 +4374,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6384234492647339170}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 8c23f2e147575423aa43dfad45238f32, type: 3}
   _audioClipHandle:
@@ -4522,7 +4522,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7458019550875023330}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f3898a0e79a4c404b9fbdd51c170478a, type: 3}
   _audioClipHandle:
@@ -4671,7 +4671,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 286168839478985183}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 99285e2c5c54a4ac39acbd07861a3ab1, type: 3}
   _audioClipHandle:
@@ -4720,7 +4720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_Fail_Beep
-  _eventID: 0
+  _eventID: 1513756247
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -4860,7 +4860,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8992272788930440475}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000640000006400000064000000
@@ -4884,7 +4884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Toddler_Footsteps_Run
-  _eventID: 0
+  _eventID: 912148192
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -5017,7 +5017,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1421063121858563606}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 179e4138df189405e950b399c591a0df, type: 3}
   _audioClipHandle:
@@ -5165,7 +5165,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 105673905456332253}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 1d1b919724bc44a6c932e74fba8e9549, type: 3}
   _audioClipHandle:
@@ -5320,7 +5320,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4161902708314873485}
   _onEventNotifyEventName: 
   _playlist:
   - {fileID: 1738214124170163158}
@@ -5351,7 +5351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_Sequence
-  _eventID: 0
+  _eventID: 1163215979
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -5484,7 +5484,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4574264422853883301}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0600dba4dad2e46f4ace649cb8fbd2ae, type: 3}
   _audioClipHandle:
@@ -5639,7 +5639,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3696860694921374226}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000640000006400000064000000
@@ -5664,6 +5664,157 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eventName: Dishes
   _eventID: -10907222
+  _overrideEventTriggerAction: 0
+  _overrideParameters:
+    _overrideIncomingEventAction: 0
+    _incomingEventAction: 0
+    _overrideEventAction: 0
+    _type: 0
+    _floatParameter: 1
+    _stringParameter: 
+    _switchPresetData:
+      _sourcePreset: 
+      _targetPreset: 
+    _dspParameterData:
+      _dspType: 0
+      _parameter: 
+      _value: 0
+      _time: 0
+      _curve: 0.5
+    _transitionToSnapshotData:
+      _snapshot: 
+      _timeToReach: 0
+--- !u!1 &2109519167685814784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3284759719136653158}
+  - component: {fileID: 1075539659758040104}
+  - component: {fileID: 4815089241386105028}
+  m_Layer: 0
+  m_Name: Oven_Sequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3284759719136653158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109519167685814784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7292447201736079341}
+  - {fileID: 6986403709892473145}
+  m_Father: {fileID: 8167205799237627814}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075539659758040104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109519167685814784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1188621971, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numVirtualizationEvents: 100
+  _maxInstances: 1
+  _stealingBehaviour: 0
+  _minimumPlaybackInterval: 0
+  _overrideParentVolume: 0
+  _volume: 1
+  _volumeRandomization: 0
+  _mute: 0
+  _overrideParentPitch: 0
+  _pitch: 1
+  _pitchRandomization: 0
+  _override2DProperties: 0
+  _pan2D: 0
+  _pan2DRandomization: 0
+  _override3DProperties: 0
+  _priority: 128
+  _panLevel: 1
+  _spreadLevel: 0
+  _spatialize: 0
+  _dopplerLevel: 1
+  _maxDistance: 500
+  _minDistance: 1
+  _rolloffMode: 0
+  _customCurvesType: 0
+  _customCurvesName: 
+  _overrideFadeProperties: 0
+  _fadeInTime: 0
+  _fadeInCurve: 0.5
+  _fadeOutTime: 0
+  _fadeOutCurve: 0.5
+  _reverbZoneMix: 1
+  _overrideBypassProperties: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _overrideAudioMixerGroup: 0
+  _audioMixerGroup: {fileID: 0}
+  _notifyParentComponent: 0
+  _audioBusName: 
+  _overrideAudioBus: 0
+  _overrideMusicTimeSettings: 0
+  _musicTimeSettingsIndex: -1
+  _musicTempo: -1
+  _musicTimeSignatureLower: 0
+  _musicTimeSignatureUpper: 0
+  _musicTimeResetOnPlay: 0
+  _midiProperties:
+    _overrideParentNoteTracking: 0
+    _noteTracking: 0
+    _keyRangeMin: 0
+    _keyRangeMax: 127
+    _velocityRangeMin: 0
+    _velocityRangeMax: 127
+    _channelRangeMin: 1
+    _channelRangeMax: 16
+    _rootNote: -36
+    _transpose: 0
+    _velocity: 0
+  _overrideSpatializeProperty: 0
+  _probability: 100
+  _multipleInstancesPerGameObject: 1
+  _componentVirtualization: 0
+  _overrideVolumeThreshold: 0
+  _volumeThreshold: 1
+  _virtualizationBehavior: 1
+  _RTPManager:
+    _parameters: []
+    _reference: {fileID: 0}
+  Guid: 
+  _componentHolder: {fileID: 1075539659758040104}
+  _onEventNotifyEventName: 
+--- !u!114 &4815089241386105028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109519167685814784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1137554331, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventName: Oven_Sequence
+  _eventID: -45745656
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -5732,7 +5883,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 0.70794576
+  _volume: 0.56234133
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -5796,7 +5947,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 9178585248128008791}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 11c326913be0e714abfbdfae792cfc21, type: 3}
   _audioClipHandle:
@@ -5944,7 +6095,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5101487147992616496}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 692b5dc8e9cea4bbc808e43c6c64e90a, type: 3}
   _audioClipHandle:
@@ -6092,7 +6243,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 218501625586659455}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: dddb0e659011747d987646b2c97d0688, type: 3}
   _audioClipHandle:
@@ -6240,7 +6391,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7455843006542632149}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b8da6a9d095bf4e248564d8e3d6e2236, type: 3}
   _audioClipHandle:
@@ -6393,7 +6544,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7571058371120549209}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 64000000640000006400000064000000
@@ -6438,6 +6589,154 @@ MonoBehaviour:
     _transitionToSnapshotData:
       _snapshot: 
       _timeToReach: 0
+--- !u!1 &2539832978563495529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8589738823502400996}
+  - component: {fileID: 4736942469616274548}
+  m_Layer: 0
+  m_Name: Oven_On
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8589738823502400996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539832978563495529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.197501, y: 10.298128, z: -13.660112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6986403709892473145}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4736942469616274548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539832978563495529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -71199202, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numVirtualizationEvents: 100
+  _maxInstances: 1
+  _stealingBehaviour: 0
+  _minimumPlaybackInterval: 0
+  _overrideParentVolume: 0
+  _volume: 1
+  _volumeRandomization: 0
+  _mute: 0
+  _overrideParentPitch: 0
+  _pitch: 1
+  _pitchRandomization: 0
+  _override2DProperties: 0
+  _pan2D: 0
+  _pan2DRandomization: 0
+  _override3DProperties: 0
+  _priority: 128
+  _panLevel: 1
+  _spreadLevel: 0
+  _spatialize: 0
+  _dopplerLevel: 1
+  _maxDistance: 500
+  _minDistance: 1
+  _rolloffMode: 0
+  _customCurvesType: 0
+  _customCurvesName: 
+  _overrideFadeProperties: 0
+  _fadeInTime: 0
+  _fadeInCurve: 0.5
+  _fadeOutTime: 0
+  _fadeOutCurve: 0.5
+  _reverbZoneMix: 1
+  _overrideBypassProperties: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _overrideAudioMixerGroup: 0
+  _audioMixerGroup: {fileID: 0}
+  _notifyParentComponent: 0
+  _audioBusName: 
+  _overrideAudioBus: 0
+  _overrideMusicTimeSettings: 0
+  _musicTimeSettingsIndex: -1
+  _musicTempo: -1
+  _musicTimeSignatureLower: 0
+  _musicTimeSignatureUpper: 0
+  _musicTimeResetOnPlay: 0
+  _midiProperties:
+    _overrideParentNoteTracking: 0
+    _noteTracking: 0
+    _keyRangeMin: 0
+    _keyRangeMax: 127
+    _velocityRangeMin: 0
+    _velocityRangeMax: 127
+    _channelRangeMin: 1
+    _channelRangeMax: 16
+    _rootNote: -36
+    _transpose: 0
+    _velocity: 0
+  _overrideSpatializeProperty: 0
+  _probability: 100
+  _multipleInstancesPerGameObject: 1
+  _componentVirtualization: 0
+  _overrideVolumeThreshold: 0
+  _volumeThreshold: 1
+  _virtualizationBehavior: 1
+  _RTPManager:
+    _parameters: []
+    _reference: {fileID: 0}
+  Guid: 
+  _componentHolder: {fileID: 4736942469616274548}
+  _onEventNotifyEventName: 
+  _audioClip: {fileID: 8300000, guid: b444a88e37085455f8829f8b7d949ddd, type: 3}
+  _audioClipHandle:
+    _audioClipPath: 
+    _useAudioClipPath: 1
+  _dynamicAudioClipLoading: 0
+  _dynamicAudioClipUnloadDelay: 0
+  _dynamicAsyncAudioClipLoading: 0
+  _audioClipAssetPath: 0
+  _delay: 0
+  _delayInBeats: 0
+  _loop: 0
+  _ignoreNativeLoop: 0
+  _randomizeStart: 0
+  _randomizeStartPercentage: 100
+  _numLoops: -1
+  _loopMarkersLoaded: 0
+  _useLoopMarkers: 1
+  _startLoopMarkerIndex: 0
+  _endLoopMarkerIndex: 1
+  _loopRegionIndex: 0
+  _randomizeStartLoopMarkerIndex: 0
+  _randomizeEndLoopMarkerIndex: 0
+  _randomizeRegionIndex: 0
+  _dontPlay: 0
+  _dontStopOnDestroy: 0
+  _ignoreVirtualization: 0
+  _randomizePosition: 0
+  _randomizeMinPosition: 0
+  _randomizeMaxPosition: 10
+  _syncWithMusicTime: 0
+  _markers: []
+  _syncRegionsWithTempo: 0
+  _audioClipTempo: 120
+  _regions: []
 --- !u!1 &2772262146387117975
 GameObject:
   m_ObjectHideFlags: 0
@@ -6550,7 +6849,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 9117775954836549269}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 6d3d52dbb8c924e42afaa29432656563, type: 3}
   _audioClipHandle:
@@ -6698,7 +6997,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6363853666523385588}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 3c1063ebfe7ce46a58dcbaf6ec7d2a69, type: 3}
   _audioClipHandle:
@@ -6846,7 +7145,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6927818257025280909}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d29215961be9447e9a76e21ae0da63c6, type: 3}
   _audioClipHandle:
@@ -6994,7 +7293,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2593411362983988707}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: fbfd39bc24d2e492c82038a875adfc87, type: 3}
   _audioClipHandle:
@@ -7142,7 +7441,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1714695762169435685}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 32ce2ab81fac24b94a15b0d7aefec015, type: 3}
   _audioClipHandle:
@@ -7290,7 +7589,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4533698778650219837}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 25331dbd2b5af4c7fbaf9a61f0064c8b, type: 3}
   _audioClipHandle:
@@ -7438,7 +7737,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3322254630111362352}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 27f9ea9a9673f42e9af6e46eca3e6e7e, type: 3}
   _audioClipHandle:
@@ -7586,7 +7885,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1433573104494827742}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d585ec3c5981147ffa6f7fbcba49df13, type: 3}
   _audioClipHandle:
@@ -7734,7 +8033,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1183752930613298997}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b246ae00bc6d643abb8aa832824926cc, type: 3}
   _audioClipHandle:
@@ -7882,7 +8181,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2321627989080596813}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a3a8dc0955cdf4a9fb0171cbe431b739, type: 3}
   _audioClipHandle:
@@ -8030,7 +8329,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4164308822188765727}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a353c6e4e9cdf4412850579897fa34a9, type: 3}
   _audioClipHandle:
@@ -8178,7 +8477,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5010467540475400263}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 2d014aef7c7704755b67c0abdd3f26e0, type: 3}
   _audioClipHandle:
@@ -8329,7 +8628,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6460862123433339046}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -8486,7 +8785,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4520492188311578634}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 404c2f030c94b450cbcb908c8e856fe7, type: 3}
   _audioClipHandle:
@@ -8499,6 +8798,154 @@ MonoBehaviour:
   _delay: 0
   _delayInBeats: 0
   _loop: 0
+  _ignoreNativeLoop: 0
+  _randomizeStart: 0
+  _randomizeStartPercentage: 100
+  _numLoops: -1
+  _loopMarkersLoaded: 0
+  _useLoopMarkers: 1
+  _startLoopMarkerIndex: 0
+  _endLoopMarkerIndex: 1
+  _loopRegionIndex: 0
+  _randomizeStartLoopMarkerIndex: 0
+  _randomizeEndLoopMarkerIndex: 0
+  _randomizeRegionIndex: 0
+  _dontPlay: 0
+  _dontStopOnDestroy: 0
+  _ignoreVirtualization: 0
+  _randomizePosition: 0
+  _randomizeMinPosition: 0
+  _randomizeMaxPosition: 10
+  _syncWithMusicTime: 0
+  _markers: []
+  _syncRegionsWithTempo: 0
+  _audioClipTempo: 120
+  _regions: []
+--- !u!1 &3762791458414241278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7292447201736079341}
+  - component: {fileID: 4503273513489603842}
+  m_Layer: 0
+  m_Name: Oven_Gas_Loop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7292447201736079341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762791458414241278}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.197501, y: 10.298128, z: -13.660112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3284759719136653158}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4503273513489603842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762791458414241278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -71199202, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numVirtualizationEvents: 100
+  _maxInstances: 1
+  _stealingBehaviour: 0
+  _minimumPlaybackInterval: 0
+  _overrideParentVolume: 0
+  _volume: 1
+  _volumeRandomization: 0
+  _mute: 0
+  _overrideParentPitch: 0
+  _pitch: 1
+  _pitchRandomization: 0
+  _override2DProperties: 0
+  _pan2D: 0
+  _pan2DRandomization: 0
+  _override3DProperties: 0
+  _priority: 128
+  _panLevel: 1
+  _spreadLevel: 0
+  _spatialize: 0
+  _dopplerLevel: 1
+  _maxDistance: 500
+  _minDistance: 1
+  _rolloffMode: 0
+  _customCurvesType: 0
+  _customCurvesName: 
+  _overrideFadeProperties: 0
+  _fadeInTime: 2
+  _fadeInCurve: 1
+  _fadeOutTime: 0
+  _fadeOutCurve: 0.5
+  _reverbZoneMix: 1
+  _overrideBypassProperties: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _overrideAudioMixerGroup: 0
+  _audioMixerGroup: {fileID: 0}
+  _notifyParentComponent: 0
+  _audioBusName: 
+  _overrideAudioBus: 0
+  _overrideMusicTimeSettings: 0
+  _musicTimeSettingsIndex: -1
+  _musicTempo: -1
+  _musicTimeSignatureLower: 0
+  _musicTimeSignatureUpper: 0
+  _musicTimeResetOnPlay: 0
+  _midiProperties:
+    _overrideParentNoteTracking: 0
+    _noteTracking: 0
+    _keyRangeMin: 0
+    _keyRangeMax: 127
+    _velocityRangeMin: 0
+    _velocityRangeMax: 127
+    _channelRangeMin: 1
+    _channelRangeMax: 16
+    _rootNote: -36
+    _transpose: 0
+    _velocity: 0
+  _overrideSpatializeProperty: 0
+  _probability: 100
+  _multipleInstancesPerGameObject: 1
+  _componentVirtualization: 0
+  _overrideVolumeThreshold: 0
+  _volumeThreshold: 1
+  _virtualizationBehavior: 1
+  _RTPManager:
+    _parameters: []
+    _reference: {fileID: 0}
+  Guid: 
+  _componentHolder: {fileID: 4503273513489603842}
+  _onEventNotifyEventName: 
+  _audioClip: {fileID: 8300000, guid: 04c3519ba815341799dfbfdf47944287, type: 3}
+  _audioClipHandle:
+    _audioClipPath: 
+    _useAudioClipPath: 1
+  _dynamicAudioClipLoading: 0
+  _dynamicAudioClipUnloadDelay: 0
+  _dynamicAsyncAudioClipLoading: 0
+  _audioClipAssetPath: 0
+  _delay: 2
+  _delayInBeats: 0
+  _loop: 1
   _ignoreNativeLoop: 0
   _randomizeStart: 0
   _randomizeStartPercentage: 100
@@ -8634,7 +9081,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3907134959662662374}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 6456a1a53f066471990f2a413a7caa98, type: 3}
   _audioClipHandle:
@@ -8786,7 +9233,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1287621101874264261}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -8947,7 +9394,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4033264308207087477}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -9105,7 +9552,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 693293737207942418}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f7c8995788ed6437fab965d1ad7322e1, type: 3}
   _audioClipHandle:
@@ -9288,7 +9735,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5247021848155273770}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e62d1822b293e4dbeaee8fe029d3d59f, type: 3}
   _audioClipHandle:
@@ -9337,7 +9784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_Open
-  _eventID: 0
+  _eventID: 32904864
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -9434,7 +9881,7 @@ MonoBehaviour:
     _bpm: 120
     _timeSignatureLower: 3
     _timeSignatureUpper: 4
-    _syncType: 1
+    _syncType: 0
     _syncTarget: {fileID: 754653530}
   _fabricEditorPath: Assets/Fabric/Editor
   _VRAudioManager:
@@ -9488,6 +9935,7 @@ MonoBehaviour:
   - Microwave_Sequence
   - Music
   - MusicBox_Play
+  - Oven_Sequence
   - Powerplug_Shock
   - Toddler_Footsteps_Run
   - Toddler_Footsteps_Walk
@@ -9502,13 +9950,13 @@ MonoBehaviour:
     _eventNames: []
     _eventList: []
   profiler:
-    totalMS: 0
-    recordedMS: 0
-    percent: 0
-    msPerFrame: 0
-    maxMsPerFrame: 0
-    msPerCall: 0
-    timesPerFrame: 0
+    totalMS: 709.10645
+    recordedMS: 1.5258789
+    percent: 0.21518333
+    msPerFrame: 0.0005941896
+    maxMsPerFrame: 0.0025431316
+    msPerCall: 0.0005941896
+    timesPerFrame: 1
   _eventMenuListFoldout: 1
   _eventListFoldout: 1
   _forceQueueAllEvents: 0
@@ -9643,7 +10091,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1509292655965915434}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 5db3aeb7bc57242c0967de88500a3394, type: 3}
   _audioClipHandle:
@@ -9692,7 +10140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: MusicBox_Play
-  _eventID: 0
+  _eventID: -899098601
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -9825,7 +10273,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6428553731496304429}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: eb41b466166c9492b9d1e010f0a6a2ef, type: 3}
   _audioClipHandle:
@@ -9974,7 +10422,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8200450015277449741}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a353c6e4e9cdf4412850579897fa34a9, type: 3}
   _audioClipHandle:
@@ -10023,7 +10471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_Close
-  _eventID: 0
+  _eventID: -627365084
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -10156,7 +10604,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4795425594435064668}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 938102ba72ba440819488bf16926e1a9, type: 3}
   _audioClipHandle:
@@ -10304,7 +10752,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5082314472493731291}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 682e563399af945bd93a8ab16848d134, type: 3}
   _audioClipHandle:
@@ -10452,7 +10900,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1738214124170163158}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e62d1822b293e4dbeaee8fe029d3d59f, type: 3}
   _audioClipHandle:
@@ -10600,7 +11048,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6961708292319978803}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: fbe4b9b1204a7450c847c484ea741728, type: 3}
   _audioClipHandle:
@@ -10748,7 +11196,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 50452649378460926}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 2f5372a53a3b44d7db18b34425a411e5, type: 3}
   _audioClipHandle:
@@ -10784,6 +11232,136 @@ MonoBehaviour:
   _syncRegionsWithTempo: 0
   _audioClipTempo: 120
   _regions: []
+--- !u!1 &5467557314107639462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6986403709892473145}
+  - component: {fileID: 6296590318582700916}
+  m_Layer: 0
+  m_Name: Oven_Sequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6986403709892473145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467557314107639462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5944158023794870202}
+  - {fileID: 8589738823502400996}
+  - {fileID: 3978567752272515060}
+  m_Father: {fileID: 3284759719136653158}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6296590318582700916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467557314107639462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1491795558, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numVirtualizationEvents: 100
+  _maxInstances: 1
+  _stealingBehaviour: 0
+  _minimumPlaybackInterval: 0
+  _overrideParentVolume: 0
+  _volume: 1
+  _volumeRandomization: 0
+  _mute: 0
+  _overrideParentPitch: 0
+  _pitch: 1
+  _pitchRandomization: 0
+  _override2DProperties: 0
+  _pan2D: 0
+  _pan2DRandomization: 0
+  _override3DProperties: 0
+  _priority: 128
+  _panLevel: 1
+  _spreadLevel: 0
+  _spatialize: 0
+  _dopplerLevel: 1
+  _maxDistance: 500
+  _minDistance: 1
+  _rolloffMode: 0
+  _customCurvesType: 0
+  _customCurvesName: 
+  _overrideFadeProperties: 0
+  _fadeInTime: 0
+  _fadeInCurve: 0.5
+  _fadeOutTime: 0
+  _fadeOutCurve: 0.5
+  _reverbZoneMix: 1
+  _overrideBypassProperties: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _overrideAudioMixerGroup: 0
+  _audioMixerGroup: {fileID: 0}
+  _notifyParentComponent: 0
+  _audioBusName: 
+  _overrideAudioBus: 0
+  _overrideMusicTimeSettings: 0
+  _musicTimeSettingsIndex: -1
+  _musicTempo: -1
+  _musicTimeSignatureLower: 0
+  _musicTimeSignatureUpper: 0
+  _musicTimeResetOnPlay: 0
+  _midiProperties:
+    _overrideParentNoteTracking: 0
+    _noteTracking: 0
+    _keyRangeMin: 0
+    _keyRangeMax: 127
+    _velocityRangeMin: 0
+    _velocityRangeMax: 127
+    _channelRangeMin: 1
+    _channelRangeMax: 16
+    _rootNote: -36
+    _transpose: 0
+    _velocity: 0
+  _overrideSpatializeProperty: 0
+  _probability: 100
+  _multipleInstancesPerGameObject: 1
+  _componentVirtualization: 0
+  _overrideVolumeThreshold: 0
+  _volumeThreshold: 1
+  _virtualizationBehavior: 1
+  _RTPManager:
+    _parameters: []
+    _reference: {fileID: 0}
+  Guid: 
+  _componentHolder: {fileID: 6296590318582700916}
+  _onEventNotifyEventName: 
+  _playlist:
+  - {fileID: 5985579663183722358}
+  - {fileID: 4736942469616274548}
+  - {fileID: 4424115651393458624}
+  _playlistPlayToEnd: 000000
+  _resetOnFirstPlay: 0
+  _syncToMusicOnFirstPlay: 1
+  _transitionOffset: 0
+  _transitionOffsetRandomization: 0
+  _sequenceType: 0
+  _sequencePlayMode: 0
+  _sequenceAdvanceMode: 1
+  _syncAdvanceBetweenInstances: 0
 --- !u!1 &5650153294695038156
 GameObject:
   m_ObjectHideFlags: 0
@@ -10896,7 +11474,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6687788673147761044}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7a0ced94acbd441158f9613391551314, type: 3}
   _audioClipHandle:
@@ -11044,7 +11622,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8456071554153265354}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7ba64340b32ba4cc3a0a3aa153071e1c, type: 3}
   _audioClipHandle:
@@ -11192,7 +11770,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4923254361419188562}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c5618f9ea92694650a49d7b2d38efe0f, type: 3}
   _audioClipHandle:
@@ -11349,7 +11927,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3207847960226556700}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000640000006400000064000000640000006400000064000000
@@ -11506,7 +12084,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 9060638935748294543}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 5ab25a39b75b94f55a662f88718112c8, type: 3}
   _audioClipHandle:
@@ -11658,7 +12236,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4327182909285996656}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -11682,7 +12260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Toy_Jinglebells
-  _eventID: 0
+  _eventID: -443932368
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -11815,7 +12393,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4835585449917729847}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: df794409e07814c6f97b8557e19d1c29, type: 3}
   _audioClipHandle:
@@ -11964,7 +12542,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 265029890632414672}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 98e3392681dd94aa3b137f216bf5baa7, type: 3}
   _audioClipHandle:
@@ -12146,7 +12724,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 287458901974068735}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7eb65724ff74941a39ca6b68668b3064, type: 3}
   _audioClipHandle:
@@ -12301,7 +12879,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7656885646722975318}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000640000006400000064000000
@@ -12459,7 +13037,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 9201923485981751821}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 412f0bafb34ed48a3b9f30ffba3445a6, type: 3}
   _audioClipHandle:
@@ -12644,7 +13222,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 3041177336539415208}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -12809,7 +13387,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4190766705180908084}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000640000006400000064000000
@@ -12966,7 +13544,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7014393588433704462}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 33ef2f5e7358643a4b50e856bcf089df, type: 3}
   _audioClipHandle:
@@ -13050,7 +13628,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: 0.56234133
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -13114,7 +13692,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7535010859594369678}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 99285e2c5c54a4ac39acbd07861a3ab1, type: 3}
   _audioClipHandle:
@@ -13262,7 +13840,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 9220315368166063502}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 97acf5abb40d44112a39140f7eb57bfd, type: 3}
   _audioClipHandle:
@@ -13410,7 +13988,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5121139673548597825}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ac5365423ecf7456cafd4ac4b82c326f, type: 3}
   _audioClipHandle:
@@ -13558,7 +14136,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5594111516549556198}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f4c7f52bd91ee42e6b52c08cd0773b18, type: 3}
   _audioClipHandle:
@@ -13706,7 +14284,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6472948519347348170}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e683bc106776b4e80bc6cc5a03f268e2, type: 3}
   _audioClipHandle:
@@ -13854,7 +14432,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4766153841603331827}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 59e8028e8ce134c96b3ef1b35934c6ea, type: 3}
   _audioClipHandle:
@@ -14002,7 +14580,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 256795096094637419}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: aafb732a369b8412588d5d363cf44f6f, type: 3}
   _audioClipHandle:
@@ -14150,7 +14728,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6699281660622696626}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c4b35f106bf424204a91c5b92d2df397, type: 3}
   _audioClipHandle:
@@ -14298,7 +14876,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1497914441382483356}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 813cb28b6221b4755bc4f83031c1e4b7, type: 3}
   _audioClipHandle:
@@ -14446,7 +15024,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4816159431594406495}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 3eeecfbfbcca94f558e661a48660029d, type: 3}
   _audioClipHandle:
@@ -14594,7 +15172,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7499871585630469109}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: bc7debcbe68844efba829c4600057fbe, type: 3}
   _audioClipHandle:
@@ -14742,7 +15320,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7403697818410540751}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 583654780577747fb955a71c2c881c3e, type: 3}
   _audioClipHandle:
@@ -14826,7 +15404,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 0.70794576
+  _volume: 0.56234133
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -14890,9 +15468,9 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7202789117772534455}
   _onEventNotifyEventName: 
-  _audioClip: {fileID: 8300000, guid: 11c326913be0e714abfbdfae792cfc21, type: 3}
+  _audioClip: {fileID: 8300000, guid: fac11b4f8518b8941af0433de3243a37, type: 3}
   _audioClipHandle:
     _audioClipPath: 
     _useAudioClipPath: 1
@@ -15038,7 +15616,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2848102349553140696}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7cfa1de77943c4f9b92271464927d20e, type: 3}
   _audioClipHandle:
@@ -15187,7 +15765,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1518706434666499305}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 32ce2ab81fac24b94a15b0d7aefec015, type: 3}
   _audioClipHandle:
@@ -15236,7 +15814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: Microwave_On
-  _eventID: 0
+  _eventID: 238484021
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -15305,7 +15883,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: 0.56234133
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -15369,7 +15947,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2895082257270683699}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ba4f1a122a6ef433c8ff2345b2af6065, type: 3}
   _audioClipHandle:
@@ -15517,7 +16095,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2414912637740602536}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 4041bba651686446d98f86a670d779be, type: 3}
   _audioClipHandle:
@@ -15665,7 +16243,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 6095458987556058292}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0ddddbd8d03cf453aa63ee05ebf1b7a4, type: 3}
   _audioClipHandle:
@@ -15817,7 +16395,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5892993820307452865}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -15978,7 +16556,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8700232415164460359}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -16072,6 +16650,7 @@ Transform:
   - {fileID: 1764988674767848977}
   - {fileID: 6992579613820985670}
   - {fileID: 7200749403045321913}
+  - {fileID: 3284759719136653158}
   m_Father: {fileID: 441073708}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16156,7 +16735,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 8274074096885043127}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -16276,9 +16855,305 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4288887083273510626}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 09ac3c21964f448e7b09d4acfe219202, type: 3}
+  _audioClipHandle:
+    _audioClipPath: 
+    _useAudioClipPath: 1
+  _dynamicAudioClipLoading: 0
+  _dynamicAudioClipUnloadDelay: 0
+  _dynamicAsyncAudioClipLoading: 0
+  _audioClipAssetPath: 0
+  _delay: 0
+  _delayInBeats: 0
+  _loop: 0
+  _ignoreNativeLoop: 0
+  _randomizeStart: 0
+  _randomizeStartPercentage: 100
+  _numLoops: -1
+  _loopMarkersLoaded: 0
+  _useLoopMarkers: 1
+  _startLoopMarkerIndex: 0
+  _endLoopMarkerIndex: 1
+  _loopRegionIndex: 0
+  _randomizeStartLoopMarkerIndex: 0
+  _randomizeEndLoopMarkerIndex: 0
+  _randomizeRegionIndex: 0
+  _dontPlay: 0
+  _dontStopOnDestroy: 0
+  _ignoreVirtualization: 0
+  _randomizePosition: 0
+  _randomizeMinPosition: 0
+  _randomizeMaxPosition: 10
+  _syncWithMusicTime: 0
+  _markers: []
+  _syncRegionsWithTempo: 0
+  _audioClipTempo: 120
+  _regions: []
+--- !u!1 &8510618160148424746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3978567752272515060}
+  - component: {fileID: 4424115651393458624}
+  m_Layer: 0
+  m_Name: Oven_Close
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3978567752272515060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510618160148424746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.197501, y: 10.298128, z: -13.660112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6986403709892473145}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4424115651393458624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510618160148424746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -71199202, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numVirtualizationEvents: 100
+  _maxInstances: 1
+  _stealingBehaviour: 0
+  _minimumPlaybackInterval: 0
+  _overrideParentVolume: 0
+  _volume: 1
+  _volumeRandomization: 0
+  _mute: 0
+  _overrideParentPitch: 0
+  _pitch: 1
+  _pitchRandomization: 0
+  _override2DProperties: 0
+  _pan2D: 0
+  _pan2DRandomization: 0
+  _override3DProperties: 0
+  _priority: 128
+  _panLevel: 1
+  _spreadLevel: 0
+  _spatialize: 0
+  _dopplerLevel: 1
+  _maxDistance: 500
+  _minDistance: 1
+  _rolloffMode: 0
+  _customCurvesType: 0
+  _customCurvesName: 
+  _overrideFadeProperties: 0
+  _fadeInTime: 0
+  _fadeInCurve: 0.5
+  _fadeOutTime: 0
+  _fadeOutCurve: 0.5
+  _reverbZoneMix: 1
+  _overrideBypassProperties: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _overrideAudioMixerGroup: 0
+  _audioMixerGroup: {fileID: 0}
+  _notifyParentComponent: 0
+  _audioBusName: 
+  _overrideAudioBus: 0
+  _overrideMusicTimeSettings: 0
+  _musicTimeSettingsIndex: -1
+  _musicTempo: -1
+  _musicTimeSignatureLower: 0
+  _musicTimeSignatureUpper: 0
+  _musicTimeResetOnPlay: 0
+  _midiProperties:
+    _overrideParentNoteTracking: 0
+    _noteTracking: 0
+    _keyRangeMin: 0
+    _keyRangeMax: 127
+    _velocityRangeMin: 0
+    _velocityRangeMax: 127
+    _channelRangeMin: 1
+    _channelRangeMax: 16
+    _rootNote: -36
+    _transpose: 0
+    _velocity: 0
+  _overrideSpatializeProperty: 0
+  _probability: 100
+  _multipleInstancesPerGameObject: 1
+  _componentVirtualization: 0
+  _overrideVolumeThreshold: 0
+  _volumeThreshold: 1
+  _virtualizationBehavior: 1
+  _RTPManager:
+    _parameters: []
+    _reference: {fileID: 0}
+  Guid: 
+  _componentHolder: {fileID: 4424115651393458624}
+  _onEventNotifyEventName: 
+  _audioClip: {fileID: 8300000, guid: f3edc9d06316f4d299d218f71bac6299, type: 3}
+  _audioClipHandle:
+    _audioClipPath: 
+    _useAudioClipPath: 1
+  _dynamicAudioClipLoading: 0
+  _dynamicAudioClipUnloadDelay: 0
+  _dynamicAsyncAudioClipLoading: 0
+  _audioClipAssetPath: 0
+  _delay: 0
+  _delayInBeats: 0
+  _loop: 0
+  _ignoreNativeLoop: 0
+  _randomizeStart: 0
+  _randomizeStartPercentage: 100
+  _numLoops: -1
+  _loopMarkersLoaded: 0
+  _useLoopMarkers: 1
+  _startLoopMarkerIndex: 0
+  _endLoopMarkerIndex: 1
+  _loopRegionIndex: 0
+  _randomizeStartLoopMarkerIndex: 0
+  _randomizeEndLoopMarkerIndex: 0
+  _randomizeRegionIndex: 0
+  _dontPlay: 0
+  _dontStopOnDestroy: 0
+  _ignoreVirtualization: 0
+  _randomizePosition: 0
+  _randomizeMinPosition: 0
+  _randomizeMaxPosition: 10
+  _syncWithMusicTime: 0
+  _markers: []
+  _syncRegionsWithTempo: 0
+  _audioClipTempo: 120
+  _regions: []
+--- !u!1 &8534745449974264650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5944158023794870202}
+  - component: {fileID: 5985579663183722358}
+  m_Layer: 0
+  m_Name: Oven_Open
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5944158023794870202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534745449974264650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.197501, y: 10.298128, z: -13.660112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6986403709892473145}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5985579663183722358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534745449974264650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -71199202, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numVirtualizationEvents: 100
+  _maxInstances: 1
+  _stealingBehaviour: 0
+  _minimumPlaybackInterval: 0
+  _overrideParentVolume: 0
+  _volume: 1
+  _volumeRandomization: 0
+  _mute: 0
+  _overrideParentPitch: 0
+  _pitch: 1
+  _pitchRandomization: 0
+  _override2DProperties: 0
+  _pan2D: 0
+  _pan2DRandomization: 0
+  _override3DProperties: 0
+  _priority: 128
+  _panLevel: 1
+  _spreadLevel: 0
+  _spatialize: 0
+  _dopplerLevel: 1
+  _maxDistance: 500
+  _minDistance: 1
+  _rolloffMode: 0
+  _customCurvesType: 0
+  _customCurvesName: 
+  _overrideFadeProperties: 0
+  _fadeInTime: 0
+  _fadeInCurve: 0.5
+  _fadeOutTime: 0
+  _fadeOutCurve: 0.5
+  _reverbZoneMix: 1
+  _overrideBypassProperties: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _overrideAudioMixerGroup: 0
+  _audioMixerGroup: {fileID: 0}
+  _notifyParentComponent: 0
+  _audioBusName: 
+  _overrideAudioBus: 0
+  _overrideMusicTimeSettings: 0
+  _musicTimeSettingsIndex: -1
+  _musicTempo: -1
+  _musicTimeSignatureLower: 0
+  _musicTimeSignatureUpper: 0
+  _musicTimeResetOnPlay: 0
+  _midiProperties:
+    _overrideParentNoteTracking: 0
+    _noteTracking: 0
+    _keyRangeMin: 0
+    _keyRangeMax: 127
+    _velocityRangeMin: 0
+    _velocityRangeMax: 127
+    _channelRangeMin: 1
+    _channelRangeMax: 16
+    _rootNote: -36
+    _transpose: 0
+    _velocity: 0
+  _overrideSpatializeProperty: 0
+  _probability: 100
+  _multipleInstancesPerGameObject: 1
+  _componentVirtualization: 0
+  _overrideVolumeThreshold: 0
+  _volumeThreshold: 1
+  _virtualizationBehavior: 1
+  _RTPManager:
+    _parameters: []
+    _reference: {fileID: 0}
+  Guid: 
+  _componentHolder: {fileID: 5985579663183722358}
+  _onEventNotifyEventName: 
+  _audioClip: {fileID: 8300000, guid: d211aa8738e01466eb2e1e2cee0697bd, type: 3}
   _audioClipHandle:
     _audioClipPath: 
     _useAudioClipPath: 1
@@ -16424,7 +17299,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 4259853886641878439}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d2420514903494c619cc2f1789b10182, type: 3}
   _audioClipHandle:
@@ -16572,7 +17447,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 518376329312830678}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e1b55e06966ad487795003cec2df44d6, type: 3}
   _audioClipHandle:
@@ -16720,7 +17595,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 2940161703712736365}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 9aafbc182a58b486f8c379f711d88500, type: 3}
   _audioClipHandle:
@@ -16868,7 +17743,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 7112400146537923675}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e954cd31d397d44a79fe3b48304395d6, type: 3}
   _audioClipHandle:
@@ -17023,7 +17898,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 5131239710426470627}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000640000006400000064000000
