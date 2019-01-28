@@ -35,6 +35,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     public ToddlerState currentState;
 	public List<GameObject> toolsInRange;
 	public List<GameObject> targetsInRange;
+	public List<GameObject> reactingTargetsInRange;
     
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
 		toolsInRange = new List<GameObject> ();
 		targetsInRange = new List<GameObject> ();
+		reactingTargetsInRange = new List<GameObject> ();
         
     }
 
@@ -206,6 +208,25 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             Debug.Log ("TOOLS IN RANGE REMOVE: " + toolsInRange.Count);
            
         }
+        
+        if (other.gameObject.CompareTag ("Target") && targetsInRange.Contains (other.gameObject)) {
+
+			AbstractTarget target = other.transform.GetComponent<AbstractTarget> ();
+
+			targetsInRange.Remove (other.gameObject);
+			
+			 Debug.Log ("TARGETS IN RANGE REMOVE: " + targetsInRange.Count);
+
+			if (reactingTargetsInRange.Contains (other.gameObject)) {
+				reactingTargetsInRange.Remove (other.gameObject);
+				AbstractTarget.OnWalkaway (CurrentTool, target);
+				 Debug.Log ("REACTING TARGETS IN RANGE REMOVE: " + reactingTargetsInRange.Count);
+			}
+			
+
+		}
+        
+        
     }
     
     private void OnTriggerStay(Collider other)
@@ -221,8 +242,27 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 			Debug.Log ("TOOLS IN RANGE ADD: " + toolsInRange.Count);
 
 		}
+
+		if (other.gameObject.CompareTag ("Target") && targetsInRange.Contains (other.gameObject) == false) {
+
+			AbstractTarget target = other.transform.GetComponent<AbstractTarget> ();
+			
+			
+			targetsInRange.Add (other.gameObject);
+			
+			 Debug.Log ("TARGETS IN RANGE ADD: " + targetsInRange.Count + " " + other.gameObject.name);
+
+
+			if (target.IsReactableTool()) {
+				reactingTargetsInRange.Add (other.gameObject);
+				AbstractTarget.InteractionAttempt(CurrentTool, target);
+				Debug.Log ("REACTING TARGETS IN RANGE ADD: " + reactingTargetsInRange.Count + " " + other.gameObject.name);
+
+			}
+	
+		}
 		
-        
+		
     }
 
 
@@ -239,6 +279,9 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             Destroy(holdJoint);
 
 			currentState = ToddlerState.Exploring;
+
+			targetsInRange.Clear ();
+			reactingTargetsInRange.Clear ();
         }
     }
 
@@ -251,6 +294,9 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         }
         Destroy(CurrentTool.gameObject);
         CurrentTool = null;
+        
+        targetsInRange.Clear ();
+		reactingTargetsInRange.Clear ();
     }
 
     public void OnCaught()
@@ -289,7 +335,10 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             CurrentTool = availableTool.GetComponent<AbstractTool>();
             OnWalkaway (CurrentTool);
 			currentState = ToddlerState.Carrying;
-            OnPickedUp(CurrentTool);
+            OnPickedUp(CurrentTool); 
+                
+        	targetsInRange.Clear ();
+			reactingTargetsInRange.Clear ();
         }
     }
 

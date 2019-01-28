@@ -35,30 +35,6 @@ public abstract class AbstractTarget : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-//        Debug.Log(name + " trigger enter.", gameObject);
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
-        {
-            if (IsReactableTool())
-            {
-                waitingForConfirmation = true;
-                InteractionAttempt(ToddlerController.CurrentTool, this);
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Tool"))
-        {
-            if (IsReactableTool())
-            {
-                waitingForConfirmation = false;
-                OnWalkaway(ToddlerController.CurrentTool, this);
-            }
-        }
-    }
 
     [Button("Test reaction")]
     void ForceReaction()
@@ -66,30 +42,33 @@ public abstract class AbstractTarget : MonoBehaviour
        React(); 
     }
 
-    public virtual void TryReact()
+    public virtual bool TryReact()
     {
         if (IsReactableTool())
         {
             print(name + " successful reaction.");
+            
             React();
             OnSuccessfulReaction(ToddlerController.CurrentTool, this);
+			return true;
         }
         else
         {
+			return false;
            // print("interaction fail. current tool: " + ToddlerController.CurrentTool.name);
         }
     }
 
-    protected AbstractTool IsReactableTool()
+    public bool IsReactableTool()
     {
         if (ToddlerController.CurrentTool == null)
         {
-            //print("Not holding a tool but checking if I can react with it...");
-            return null;
+			//print("Not holding a tool but checking if I can react with it...");
+			return false;
         }
         print("looking for ... " + ToddlerController.CurrentTool.name);
         print(_itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name));
-        return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name);
+        return _itemsIWillReactWith.Find(tool => tool.name == ToddlerController.CurrentTool.name) != null;
     }
 
     public abstract void React();

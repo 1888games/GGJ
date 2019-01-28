@@ -14164,6 +14164,16 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 232955908}
+    - target: {fileID: 3802880756153574423, guid: 7d038be1a413045689eddb0627008394,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802880756153574423, guid: 7d038be1a413045689eddb0627008394,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d038be1a413045689eddb0627008394, type: 3}
 --- !u!4 &584034219 stripped
@@ -27913,6 +27923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oven
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401884856489123112, guid: a35df16fef70747b98fb6b40ed6bebcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 1401884856489123113, guid: a35df16fef70747b98fb6b40ed6bebcb,
         type: 3}
