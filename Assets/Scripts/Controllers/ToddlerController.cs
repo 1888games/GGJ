@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Random = System.Random;
+
+public enum ToddlerState { Exploring, Carrying, Panicking }
 
 public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 {
@@ -17,7 +18,8 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     [SerializeField] TextMeshProUGUI _countdownText;
     [SerializeField] Transform _hand;
     [SerializeField] GameObject _chaseAvoided;
-        [SerializeField] GameObject _caught;
+    [SerializeField] GameObject _caught;
+         
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigidbody;
     private FixedJoint holdJoint;
@@ -25,16 +27,15 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     private float radius;
     private float height;
 
-    private bool waitingForConfirmation;
-
-    private GameObject availableTool;
     GameObject currentNoise;
     string currentParentAction;
     
     string[] ParentActions = {"Speak", "Sing", "Cuddle", "Dance"};
-
-    bool isBeingChased;
-
+    
+    public ToddlerState currentState;
+	public List<GameObject> toolsInRange;
+	public List<GameObject> targetsInRange;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,37 +45,55 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
         radius = capsuleCollider.radius;
         height = capsuleCollider.height;
+
+		currentState = ToddlerState.Exploring;
+
+		toolsInRange = new List<GameObject> ();
+		targetsInRange = new List<GameObject> ();
+        
     }
 
     private void Update()
     {
         if (!Input.anyKey)
         {
-            // do nothing
             _anim.SetBool("isWalking", false);
+			return;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl))
+        
+        if (Input.GetKeyDown(KeyCode.RightShift) && currentState == ToddlerState.Carrying)
         {
-            if (CurrentTool != null)
-                DropTool();
+			DropTool ();
+			return;
+			
         }
-        else if (waitingForConfirmation && Input.GetKeyDown(KeyCode.Space))
-        {
-            waitingForConfirmation = false;
 
-            DoPickup();
-        }
-        else
+		int numericKey = 99;
+
+		for (int i = 1; i < 10; ++i) {
+			if (Input.GetKeyDown ("" + i)) {
+				numericKey = i;
+			}
+		}
+
+		if (currentState == ToddlerState.Exploring && toolsInRange.Count >= numericKey)
         {
-            TurnAndRotate();
-            if(_anim.GetBool("isPanicking") == false) _anim.SetBool("isWalking", true);
+       
+            DoPickup(numericKey - 1);
+			return;
         }
+        
+        
+		TurnAndRotate();
+        
+        if(_anim.GetBool("isPanicking") == false) _anim.SetBool("isWalking", true);
+        
     }
 
     private void TurnAndRotate()
     {
-        float xMove = transform.position.x + Input.GetAxis("Horizontal") * GetWalkRate() * Time.fixedDeltaTime;
-        float yMove = transform.position.z + Input.GetAxis("Vertical") * GetWalkRate() * Time.fixedDeltaTime;
+        float xMove = transform.position.x + Input.GetAxis("Horizontal") * walkRate * Time.fixedDeltaTime;
+        float yMove = transform.position.z + Input.GetAxis("Vertical") * walkRate * Time.fixedDeltaTime;
 
         // rotate to face direction of travel
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
@@ -91,14 +110,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         
     }
 
-    /// <summary>
-    /// Gets the walk rate.
-    /// </summary>
-    /// <returns>The walk rate.</returns>
-    private float GetWalkRate()
-    {
-        return this.walkRate;
-    }
+
 
     [Button("Reload game")]
     void ReloadGame()
@@ -106,22 +118,6 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!waitingForConfirmation && other.gameObject.CompareTag("Tool"))
-        {
-            waitingForConfirmation = true;
-            availableTool = other.transform.parent.gameObject;
-            PickupAttempt(availableTool.GetComponent<AbstractTool>());
-        }
-
-//        else if (other.gameObject.CompareTag("Parent"))
-//        {
-//            waitingForConfirmation = true;
-//            currentParentAction = ParentActions[UnityEngine.Random.Range(0, ParentActions.Length)];
-//            OnParentApproached(currentParentAction);
-//        }
-    }
 
     
     
@@ -134,7 +130,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         // enter chase mode.
         currentNoise = Instantiate(_noisePrefab, transform);
         currentNoise.transform.localPosition = Vector3.zero;
-        isBeingChased = true;
+        currentState = ToddlerState.Panicking;
         StartCoroutine(ChaseCountdown());
     }
 
@@ -145,7 +141,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         _countdown.alpha = 1f;
         while (secondsRemaining != 0)
         {
-            if (isBeingChased == false)
+            if (currentState != ToddlerState.Panicking)
             {
                 // got caught.
                 _countdown.alpha = 0f;
@@ -169,7 +165,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     
     IEnumerator caught()
     {
-        isBeingChased = false;
+        currentState = ToddlerState.Exploring;
         _caught.SetActive(true);
         yield return new WaitForSeconds(2f);
         _caught.SetActive(false);
@@ -181,7 +177,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     {
         OnChaseModeFinished();
         _countdown.alpha = 0f;
-        isBeingChased = false;
+		currentState = ToddlerState.Exploring;
         Destroy(currentNoise);
         _anim.SetBool("isPanicking", false);
         Fabric.EventManager.Instance.PostEvent("Music", Fabric.EventAction.SetSwitch, "ExploLoop");
@@ -189,12 +185,34 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Tool") && availableTool == other.transform.parent.gameObject)
+        if (other.gameObject.CompareTag ("Tool") && toolsInRange.Contains (other.gameObject))  
         {
-            OnWalkaway(availableTool.GetComponent<AbstractTool>());
-            availableTool = null;
+
+			OnWalkaway (other.gameObject.GetComponent<AbstractTool> ());
+			
+            toolsInRange.Remove (other.gameObject);
+            Debug.Log ("TOOLS IN RANGE REMOVE: " + toolsInRange.Count);
+           
         }
     }
+    
+    private void OnTriggerStay(Collider other)
+    {
+
+		if (other.gameObject.CompareTag ("Tool") && toolsInRange.Contains (other.gameObject) == false) {
+
+			AbstractTool tool = other.transform.GetComponent<AbstractTool> ();
+
+			toolsInRange.Add (other.gameObject);
+			PickupAttempt(tool);
+
+			Debug.Log ("TOOLS IN RANGE ADD: " + toolsInRange.Count);
+
+		}
+		
+        
+    }
+
 
     private void DropTool()
     {
@@ -203,10 +221,12 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             OnDropped(CurrentTool);
             CurrentTool.transform.SetParent(null);
             CurrentTool.GetComponent<Rigidbody>().useGravity = true;
-			availableTool.GetComponent<BoxCollider> ().enabled = true;
+			CurrentTool.GetComponent<BoxCollider> ().enabled = true;
             CurrentTool = null;
 
             Destroy(holdJoint);
+
+			currentState = ToddlerState.Exploring;
         }
     }
 
@@ -223,7 +243,7 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     public void OnCaught()
     {
-        isBeingChased = false;
+        currentState = ToddlerState.Exploring;
         OnChaseModeFinish();
         StartCoroutine(caught());
         ExperienceController.Instance.UpdateExperienceAndAnguish("Caught",null);
@@ -231,10 +251,19 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     }
 
     
-    private void DoPickup()
+    private void DoPickup(int id)
     {
+
+	
+		
+		GameObject availableTool = toolsInRange [id].transform.parent.gameObject;
+		
+		toolsInRange.RemoveAt (id);
+		
         if (availableTool != null)
         {
+        
+        	
             availableTool.transform.SetParent(_hand == null ? transform : _hand);
             Vector3 toolSize = availableTool.GetComponent<BoxCollider>().size;
             availableTool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
@@ -246,6 +275,8 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             holdJoint.connectedBody = this.rigidbody;
 
             CurrentTool = availableTool.GetComponent<AbstractTool>();
+            OnWalkaway (CurrentTool);
+			currentState = ToddlerState.Carrying;
             OnPickedUp(CurrentTool);
         }
     }
