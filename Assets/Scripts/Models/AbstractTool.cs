@@ -11,6 +11,8 @@ public abstract class AbstractTool : MonoBehaviour
 	bool inRange = false;
 	bool highlighted = false;
 
+	Color originalColor;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -35,6 +37,12 @@ public abstract class AbstractTool : MonoBehaviour
 					indicateProximity (false);
 				}
 			}
+		} else {
+			
+			if (highlighted) {
+					indicateProximity (false);
+			}
+
 		}
     }
 
@@ -60,6 +68,7 @@ public abstract class AbstractTool : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !IsHeld)
         {
 			inRange = false;
+			indicateProximity (false);
         }
     }
 
@@ -68,9 +77,11 @@ public abstract class AbstractTool : MonoBehaviour
 		
 		if (mesh != null) {
 			if (enable) {
+				originalColor = mesh.material.color;
 				mesh.material.color = Color.red;
 			} else {
-				mesh.material.color = Color.white;
+				mesh.material.color = originalColor;
+				
 			}
 
 		}
