@@ -96,6 +96,13 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             DoPickup(numericKey - 1);
 			return;
         }
+
+		if (currentState == ToddlerState.Carrying && reactingTargetsInRange.Count >= numericKey) {
+
+			DoInteract (numericKey - 1);
+			return;
+
+		}
         
         
 		TurnAndRotate();
@@ -199,10 +206,10 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag ("Tool") && toolsInRange.Contains (other.gameObject))  
+        if (other.gameObject.CompareTag ("Tool") &&  other.gameObject.name == "Trigger" && toolsInRange.Contains (other.gameObject))  
         {
 
-			OnWalkaway (other.gameObject.GetComponent<AbstractTool> ());
+			OnWalkaway (other.transform.parent.gameObject.GetComponent<AbstractTool> ());
 			
             toolsInRange.Remove (other.gameObject);
             Debug.Log ("TOOLS IN RANGE REMOVE: " + toolsInRange.Count);
@@ -232,9 +239,11 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     private void OnTriggerStay(Collider other)
     {
 
-		if (other.gameObject.CompareTag ("Tool") && toolsInRange.Contains (other.gameObject) == false) {
+		if (other.gameObject.CompareTag ("Tool") && other.gameObject.name == "Trigger" && toolsInRange.Contains (other.gameObject) == false) {
 
-			AbstractTool tool = other.transform.GetComponent<AbstractTool> ();
+			AbstractTool tool = other.transform.parent.gameObject.GetComponent<AbstractTool> ();
+
+			Debug.Log (tool.name + " :LSD:LKLD");
 
 			toolsInRange.Add (other.gameObject);
 			PickupAttempt(tool);
@@ -266,8 +275,15 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
     }
 
 
-    private void DropTool()
+    public void DropTool()
     {
+    
+    	if (CurrentTool == null)
+        {
+            print("trying to drop a tool but it's null");
+            return;
+        }
+        
         if (CurrentTool != null)
         {
             OnDropped(CurrentTool);
@@ -278,7 +294,9 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 
             Destroy(holdJoint);
 
-			currentState = ToddlerState.Exploring;
+			if (currentState == ToddlerState.Carrying) {
+				currentState = ToddlerState.Exploring;
+			}
 
 			targetsInRange.Clear ();
 			reactingTargetsInRange.Clear ();
@@ -292,6 +310,12 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
             print("trying to destroy a tool but it's null");
             return;
         }
+
+		toolsInRange.Remove (CurrentTool.transform.Find("Trigger").gameObject);
+
+
+		Debug.Log ("TOOLS IN RANGE DELETE: " + toolsInRange.Count + " " + CurrentTool.name);
+		
         Destroy(CurrentTool.gameObject);
         CurrentTool = null;
         
@@ -320,9 +344,9 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 		
         if (availableTool != null)
         {
-        
-        	
-            availableTool.transform.SetParent(_hand == null ? transform : _hand);
+
+
+			availableTool.transform.SetParent(_hand == null ? transform : _hand);
             Vector3 toolSize = availableTool.GetComponent<BoxCollider>().size;
             availableTool.transform.localPosition = new Vector3(0, 0, radius + toolSize.z / 2);
             availableTool.GetComponent<Rigidbody>().useGravity = false;
@@ -341,6 +365,21 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
 			reactingTargetsInRange.Clear ();
         }
     }
+
+
+
+	void DoInteract (int id) {
+
+		GameObject targetGO = reactingTargetsInRange [id];
+		
+		AbstractTarget target = targetGO.transform.GetComponent<AbstractTarget> ();
+		
+		AbstractTarget.ConfirmationReceived(CurrentTool, target);
+
+        target.TryReact();
+        
+
+	}
 
     public static AbstractTool CurrentTool;
 

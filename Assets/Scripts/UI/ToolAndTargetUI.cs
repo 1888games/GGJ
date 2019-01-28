@@ -17,8 +17,10 @@ public class ToolAndTargetUI : MonoBehaviour {
     public TextMeshProUGUI spaceText;
 
 	public GameObject optionPrefab;
+	public GameObject targetOptionPrefab;
 
 	bool redraw = true;
+	bool redrawTargets = true;
  
     void Awake () {
 		// listen to tools and targets state changes
@@ -33,6 +35,8 @@ public class ToolAndTargetUI : MonoBehaviour {
 
 		AbstractTarget.InteractionAttempt += OnApproachObject;
 		AbstractTarget.OnWalkaway += OnCancelInteract;
+
+		AbstractTarget.OnSuccessfulReaction += OnCancelInteract;
 		
 		
     }
@@ -80,12 +84,28 @@ public class ToolAndTargetUI : MonoBehaviour {
 
 	}
 
-	void RedrawOptions () {
 
-		List<GameObject> tools = ToddlerController.Instance.toolsInRange;
+	void RemoveTargetOptions () {
+	
+		foreach (Transform child in targetBar.transform) {
+
+			Destroy (child.gameObject);
+
+		}
+
+	}
+
+	void RedrawOptions () {
 
 		RemoveOptions ();
 
+		if (ToddlerController.Instance.currentState == ToddlerState.Panicking) {
+			carryingBar.DOFade (0f, 0.5f);
+			spaceText.DOFade (0f, 0.5f);
+			return;
+		}
+	 	
+		List<GameObject> tools = ToddlerController.Instance.toolsInRange;
 
 		for (int i = tools.Count - 1; i >= 0; i--) {
 
@@ -101,8 +121,48 @@ public class ToolAndTargetUI : MonoBehaviour {
 
 		if (tools.Count == 0) {
 			carryingBar.DOFade (0f, 0.5f);
+			spaceText.DOFade (0f, 0.5f);
 		}
 		
+	}
+
+
+	void RedrawTargets () {
+			
+			
+		RemoveTargetOptions ();
+
+		if (ToddlerController.Instance.currentState == ToddlerState.Panicking) {
+			plusBar.DOFade (0f, 0.5f);
+			targetBar.DOFade (0f, 0.5f);
+			spaceText.DOFade (0f, 0.5f);
+			return;
+		}
+	 
+
+		List<GameObject> targets = ToddlerController.Instance.reactingTargetsInRange;
+
+		for (int i = targets.Count - 1; i >= 0; i--) {
+
+			GameObject option = Instantiate(targetOptionPrefab);
+			option.transform.SetParent (targetBar.transform);
+
+			if (option != null && !Equals(option, null)) {
+
+				option.GetComponentInChildren<TextMeshProUGUI> ().text =
+				(i + 1).ToString () + ") " + targets [i].name;
+			}
+		}
+
+		if (targets.Count == 0) {
+			targetBar.DOFade (0f, 0.5f);
+			plusBar.DOFade (0f, 0.5f);
+			spaceText.DOFade (0f, 0.5f);
+		}
+		
+		
+
+
 	}
 
 	void HideOptions () {
@@ -113,14 +173,30 @@ public class ToolAndTargetUI : MonoBehaviour {
 
 
 	}
+	
+	
+	void HideTargets () {
 
 
-	void Update () {
+		RemoveTargetOptions ();
+		targetBar.DOFade (0f, 0.5f);
+		plusBar.DOFade (0f, 0.5f);
+
+
+	}
+
+
+	void FixedUpdate () {
 
 		if (redraw) {
 
-			RedrawOptions ();
+			Invoke ("RedrawOptions", 0.05f);
 			redraw = false;
+		}
+
+		if (redrawTargets) {
+			RedrawTargets ();
+			redrawTargets = false;
 		}
 		
 
@@ -171,13 +247,14 @@ public class ToolAndTargetUI : MonoBehaviour {
 	}
 
 	void OnCancelInteract (AbstractTool tool, AbstractTarget target) {
-			
-		spaceText.DOFade (0f, 1f);
-		carryingBar.DOFade (0f, 1f);
-		targetBar.DOFade (0f, 1f);
-        spaceText.DOFade (0f, 1f);
+
+
+		redraw = true;
+		redrawTargets = true;
+		
 		
 	}
+	
  
     void OnPickedUpObject (AbstractTool tool) {
  
@@ -186,8 +263,21 @@ public class ToolAndTargetUI : MonoBehaviour {
         } else {
            // carryingText.text = tool.name;
         }
- 
-        spaceText.DOFade (0f, 1f);
+
+		// spaceText.DOFade (0f, 1f);
+
+		RemoveOptions ();
+		
+	
+		GameObject option = Instantiate(targetOptionPrefab);
+		option.transform.SetParent (targetBar.transform);
+
+		if (option != null && !Equals(option, null)) {
+
+			option.GetComponentInChildren<TextMeshProUGUI> ().text =ToddlerController.CurrentTool.name;
+		}
+		
+		
  
     }
      
@@ -196,25 +286,57 @@ public class ToolAndTargetUI : MonoBehaviour {
         plusBar.DOFade (0f, 1f);
         targetBar.DOFade (0f, 1f);
         spaceText.DOFade (0f, 1f);
+
+		//RemoveOptions ();
     }
      
     void OnApproachObject (AbstractTool tool, AbstractTarget target) {
-         
-        if (target == null) {
-            targetText.text = "Microwave";
-        } else {
-            targetText.text = target.name;
-        }
- 
-        plusBar.alpha = 0;
-        plusBar.DOFade (1f, 1f);
-         
-        targetBar.alpha = 0;
-        targetBar.DOFade (1f, 1f);
-         
-        spaceText.alpha = 0;
-        spaceText.DOFade (1f, 1f);
-        spaceText.text = "Space = Interact";
- 
+
+		if (ToddlerController.Instance.isCarrying ()) {
+
+			redrawTargets = true;
+
+			if (targetBar.alpha < 1f) {
+				targetBar.DOFade (1f, 0.5f);
+			}
+
+
+			if (spaceText.alpha < 1f) {
+				spaceText.DOFade (1f, 0.5f);
+			}
+			
+			if (plusBar.alpha < 1f) {
+				plusBar.DOFade (1f, 0.5f);
+			}
+
+
+			spaceText.text = "Numeric Key = Interact";
+
+		} else {
+		
+	
+				HideTargets ();
+
+			
+
+		}
+
+			//if (target == null) {
+			//	targetText.text = "Microwave";
+			//} else {
+			//	targetText.text = target.name;
+			//}
+
+			//plusBar.alpha = 0;
+			//plusBar.DOFade (1f, 1f);
+
+			//targetBar.alpha = 0;
+			//targetBar.DOFade (1f, 1f);
+
+			//spaceText.alpha = 0;
+			//spaceText.DOFade (1f, 1f);
+
+			//spaceText.text = "Space = Interact";
+
     }
 }

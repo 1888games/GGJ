@@ -12,10 +12,13 @@ public class TV : AbstractTarget
     {
         if (IsReactableTool())
         {
-            if (isOn)
-                TurnOff();
-            else
-                TurnOn();
+			if (isOn) {
+				TurnOff ();
+			} else {
+				TurnOn ();
+			}
+
+			ToddlerController.Instance.DropTool ();
         }
         else
         {
