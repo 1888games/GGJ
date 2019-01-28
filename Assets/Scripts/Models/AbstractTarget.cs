@@ -76,7 +76,7 @@ public abstract class AbstractTarget : MonoBehaviour
         }
         else
         {
-            print("interaction fail. current tool: " + ToddlerController.CurrentTool.name);
+           // print("interaction fail. current tool: " + ToddlerController.CurrentTool.name);
         }
     }
 
@@ -84,7 +84,7 @@ public abstract class AbstractTarget : MonoBehaviour
     {
         if (ToddlerController.CurrentTool == null)
         {
-            print("Not holding a tool but checking if I can react with it...");
+            //print("Not holding a tool but checking if I can react with it...");
             return null;
         }
         print("looking for ... " + ToddlerController.CurrentTool.name);

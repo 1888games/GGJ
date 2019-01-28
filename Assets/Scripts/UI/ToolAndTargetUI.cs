@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -14,7 +15,10 @@ public class ToolAndTargetUI : MonoBehaviour {
     public TextMeshProUGUI carryingText;
     public TextMeshProUGUI targetText;
     public TextMeshProUGUI spaceText;
- 
+
+	public GameObject optionPrefab;
+
+	bool redraw = true;
  
     void Awake () {
 		// listen to tools and targets state changes
@@ -23,7 +27,7 @@ public class ToolAndTargetUI : MonoBehaviour {
 
 		ToddlerController.OnPickedUp += OnPickedUpObject;
 		ToddlerController.OnDropped += OnDroppedObject;
-		ToddlerController.PickupAttempt += OnAttemptPickup;
+		ToddlerController.PickupAttempt += OnObjectInRange;
 		ToddlerController.OnWalkaway += OnCancelPickup;
 		
 
@@ -61,36 +65,109 @@ public class ToolAndTargetUI : MonoBehaviour {
     [Button ("test attemptPickup")]
     void TestAttemptPickup () {
  
-        OnAttemptPickup (null);
+        OnObjectInRange (null);
  
     }
- 
- 
-    void OnAttemptPickup (AbstractTool tool) {
- 
-         
-        if (tool == null) {
-            carryingText.text = "Spoon";
-        } else {
-            carryingText.text = tool.name;
-        }
- 
-        carryingBar.alpha = 0;
-        carryingBar.DOFade (1f, 1f);
-         
-        spaceText.alpha = 0;
-        spaceText.DOFade (1f, 1f);
-        spaceText.text = "Space = Pick Up";
- 
+
+
+	void RemoveOptions () {
+
+		foreach (Transform child in carryingBar.transform) {
+
+			Destroy (child.gameObject);
+
+		}
+
+	}
+
+	void RedrawOptions () {
+
+		List<GameObject> tools = ToddlerController.Instance.toolsInRange;
+
+		RemoveOptions ();
+
+
+		for (int i = tools.Count - 1; i >= 0; i--) {
+
+			GameObject option = Instantiate(optionPrefab);
+			option.transform.SetParent (carryingBar.transform);
+
+			if (option != null && !Equals(option, null)) {
+
+				option.GetComponentInChildren<TextMeshProUGUI> ().text =
+				(i + 1).ToString () + ") " + tools [i].transform.parent.gameObject.name;
+			}
+		}
+
+		if (tools.Count == 0) {
+			carryingBar.DOFade (0f, 0.5f);
+		}
+		
+	}
+
+	void HideOptions () {
+
+
+		RemoveOptions ();
+		carryingBar.DOFade (0f, 0.5f);
+
+
+	}
+
+
+	void Update () {
+
+		if (redraw) {
+
+			RedrawOptions ();
+			redraw = false;
+		}
+		
+
+	}
+	
+    void OnObjectInRange (AbstractTool tool) {
+
+		if (ToddlerController.Instance.isExploring ()) {
+
+			redraw = true;
+
+			if (carryingBar.alpha < 1f) {
+				carryingBar.DOFade (1f, 0.5f);
+			}
+
+
+			if (spaceText.alpha < 1f) {
+				spaceText.DOFade (1f, 0.5f);
+			}
+
+
+			spaceText.text = "Numeric Key = Pick Up";
+			
+		} else {
+
+			if (ToddlerController.Instance.isCarrying() == false) {
+
+				HideOptions ();
+
+			}
+
+
+		}
  
     }
 
 
 	void OnCancelPickup (AbstractTool tool) {
 
-		spaceText.DOFade (0f, 1f);
-		carryingBar.DOFade (0f, 1f);
+		if (ToddlerController.Instance.isExploring ()) {
+			redraw = true;
 
+			if (ToddlerController.Instance.toolsInRange.Count == 0) {
+				spaceText.DOFade (0f, 0.5f);
+			}
+		}
+		
 	}
 
 	void OnCancelInteract (AbstractTool tool, AbstractTarget target) {
@@ -105,9 +182,9 @@ public class ToolAndTargetUI : MonoBehaviour {
     void OnPickedUpObject (AbstractTool tool) {
  
         if (tool == null) {
-            carryingText.text = "Spanner";
+           // carryingText.text = "Spanner";
         } else {
-            carryingText.text = tool.name;
+           // carryingText.text = tool.name;
         }
  
         spaceText.DOFade (0f, 1f);
