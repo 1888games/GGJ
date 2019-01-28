@@ -8,6 +8,8 @@ public abstract class AbstractTool : MonoBehaviour
     protected MeshRenderer meshRenderer;
 
     protected bool audioPlaying;
+	bool inRange = false;
+	bool highlighted = false;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -18,8 +20,22 @@ public abstract class AbstractTool : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (IsHeld)
-            indicateProximity(false);
+		if (IsHeld) {
+			indicateProximity (false);
+			return;
+		}
+
+		if (inRange) {
+			if (ToddlerController.Instance.isExploring ()) {
+				if (highlighted == false) {
+					indicateProximity (true);
+				}
+			} else {
+				if (highlighted) {
+					indicateProximity (false);
+				}
+			}
+		}
     }
 
     /// <summary>
@@ -35,7 +51,7 @@ public abstract class AbstractTool : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !IsHeld)
         {
-            indicateProximity(true);
+			inRange = true;
         }
     }
 
@@ -43,7 +59,7 @@ public abstract class AbstractTool : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !IsHeld)
         {
-            indicateProximity(false);
+			inRange = false;
         }
     }
 
@@ -64,6 +80,7 @@ public abstract class AbstractTool : MonoBehaviour
     protected virtual void indicateProximity(bool enable = true)
     {
 
+		highlighted = enable;
 		SetMeshColor (meshRenderer, enable);
 
 		foreach (Transform child in this.transform.Find("Trigger")) {

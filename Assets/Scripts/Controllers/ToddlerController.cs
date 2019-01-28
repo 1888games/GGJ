@@ -53,6 +53,18 @@ public class ToddlerController : MonoBehaviourSingleton<ToddlerController>
         
     }
 
+	public bool isCarrying () {
+		return currentState == ToddlerState.Carrying;
+	}
+	
+	public bool isExploring () {
+		return currentState == ToddlerState.Exploring;
+	}
+	
+	public bool isPanicking () {
+		return currentState == ToddlerState.Panicking;
+	}
+
     private void Update()
     {
         if (!Input.anyKey)
