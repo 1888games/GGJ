@@ -17,15 +17,20 @@ public abstract class AbstractTool : MonoBehaviour
     public virtual void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+
+		
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
+
 		if (IsHeld) {
 			indicateProximity (false);
 			return;
 		}
+
+	
 
 		if (inRange) {
 			if (ToddlerController.Instance.isExploring ()) {
@@ -52,7 +57,7 @@ public abstract class AbstractTool : MonoBehaviour
     /// <value><c>true</c> if is held; otherwise, <c>false</c>.</value>
     public bool IsHeld
     {
-        get { return transform.parent != null && transform.parent.CompareTag("Player"); }
+        get { return transform.parent != null && transform.parent.parent != null && transform.parent.parent.CompareTag("Player"); }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,10 +82,22 @@ public abstract class AbstractTool : MonoBehaviour
 		
 		if (mesh != null) {
 			if (enable) {
-				originalColor = mesh.material.color;
+				//Debug.Log ("ORIG1: " + originalColor);
+				originalColor = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b);
+				
+				if (mesh.transform.name == "Vernon") {
+					Debug.Log ("BACK: " + originalColor + " " + inRange + " " + highlighted + " " + enable );
+				}
 				mesh.material.color = Color.red;
 			} else {
-				mesh.material.color = originalColor;
+
+				if (originalColor.r > 0f || originalColor.g > 0f) {
+					mesh.material.color = originalColor;
+						if (mesh.transform.name == "Vernon") {
+							Debug.Log ("BACK: " + originalColor + " " + inRange + " " + highlighted + " " + enable );
+						}
+				}
+				
 				
 			}
 
@@ -92,7 +109,7 @@ public abstract class AbstractTool : MonoBehaviour
     {
 
 		highlighted = enable;
-		SetMeshColor (meshRenderer, enable);
+		//SetMeshColor (meshRenderer, enable);
 
 		foreach (Transform child in this.transform.Find("Trigger")) {
 

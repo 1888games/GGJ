@@ -104,6 +104,10 @@ public class ToolAndTargetUI : MonoBehaviour {
 			spaceText.DOFade (0f, 0.5f);
 			return;
 		}
+
+		if (ToddlerController.Instance.currentState == ToddlerState.Carrying) {
+			return;
+		}
 	 	
 		List<GameObject> tools = ToddlerController.Instance.toolsInRange;
 
@@ -249,7 +253,9 @@ public class ToolAndTargetUI : MonoBehaviour {
 	void OnCancelInteract (AbstractTool tool, AbstractTarget target) {
 
 
-		redraw = true;
+		if (ToddlerController.Instance.currentState != ToddlerState.Carrying) {
+			redraw = true;
+		}
 		redrawTargets = true;
 		
 		
