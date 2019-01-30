@@ -17,7 +17,7 @@ public class TV : AbstractTarget
 			} else {
 				TurnOn ();
 			}
-
+			
 			ToddlerController.Instance.DropTool ();
         }
         else
@@ -30,6 +30,7 @@ public class TV : AbstractTarget
     {
         isOn = TVController.Instance.ToggleTV();
 
+		
         ToddlerController.Instance.OnMadeNoise();
 
     }

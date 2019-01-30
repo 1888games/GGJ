@@ -9,6 +9,7 @@ public class Tambourine : AbstractTarget
         if (IsReactableTool())
         {
             ExperienceController.Instance.UpdateExperienceAndAnguish(name,ToddlerController.CurrentTool.name );
+            ToddlerController.Instance.DropTool ();
             Rattle();
         }
     }
